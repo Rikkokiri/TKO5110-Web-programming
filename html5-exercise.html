@@ -26,266 +26,291 @@
 
 </head>
 <body>
+  <div class="page-content">
 
-  <header>
+    <header>
 
-    <h1>Divided Airlines</h1>
-    <!-- <h1>DIVIDED AIRLINES</h1> -->
+      <h1>Divided Airlines</h1>
+      <!-- <h1>DIVIDED AIRLINES</h1> -->
 
-    <!-- MAIN PAGE NAVIGATION -->
-    <nav>
-      <ul>
-        <li><a href="#!">Home</a></li>
-        <li><a href="#!">Destinations</a></li>
-        <li><a href="#!">Information and Services</a></li>
-        <li><a href="#!">Customer Support</a></li>
-        <li><a href="#!">Business Travel</a></li>
-        <li><a href="#!">Frequent Flyer</a></li>
-      </ul>
-    </nav>
-  </header>
+      <!-- MAIN PAGE NAVIGATION -->
+      <nav>
+        <ul>
+          <li><a href="#!">Home</a></li>
+          <li><a href="#!">Destinations</a></li>
+          <li><a href="#!">Information and Services</a></li>
+          <li><a href="#!">Customer Support</a></li>
+          <li><a href="#!">Business Travel</a></li>
+          <li><a href="#!">Frequent Flyer</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <!-- MAIN BODY OF THE PAGE -->
-  <main>
+    <!-- MAIN BODY OF THE PAGE -->
+    <main>
 
-    <!-- Form for booking flights -->
-    <form id="booking-form" method="post" action="">
+      <!-- Form for booking flights -->
+      <form id="booking-form" method="post" action="">
 
-      <fieldset>
-          <legend>
-            <h2>Book Flights</h2>
-          </legend>
+        <fieldset>
+            <legend>Book Flights</legend>
 
-        <!-- Rountrip or one-way -->
-        <p>
-          <input name="ticket-type" type="radio" value="roundtrip" checked required/>
-          <label>Roundtrip</label>
-          <br />
-          <input name="ticket-type" type="radio" value="oneway" checked required/>
-          <label>One-way</label>
-        </p>
+          <!-- Rountrip or one-way -->
+          <p id="triptype">
+            <input name="ticket-type" type="radio" value="roundtrip" checked required/>
+            <label>Roundtrip</label>
 
-        <!-- From -->
-        <p>
-          <label>From</label> <br />
-          <input name="from" type="text" placeholder="From" size="30" required />
-        </p>
+            <input name="ticket-type" id="oneway" type="radio" value="oneway" required/>
+            <label>One-way</label>
+          </p>
 
-        <!-- To -->
-        <p>
-          <label>To</label> <br />
-          <input name="destination" type="text" placeholder="Where would you like to go?" size="30" required />
-        </p>
+          <!-- From -->
+          <p>
+            <label>From</label> <br />
+            <input name="from" type="text" placeholder="From" size="30" required />
+          </p>
 
-        <!-- Departure date -->
-        <p>
-          <label>Departure Date</label> <br />
+          <!-- To -->
+          <p>
+            <label>To</label> <br />
+            <input name="destination" type="text" placeholder="Where would you like to go?" size="30" required />
+          </p>
 
-        </p>
+          <!-- Departure date -->
+          <p>
+            <label>Departure Date</label> <br />
+            <input name="departure-date" type="date" required />
+          </p>
 
-        <!-- Return date -->
-        <p>
-          <label>Return Date</label> <br />
+          <!-- Return date -->
+          <p>
+            <label>Return Date</label> <br />
+            <input name="return-date" type="date" />
+          </p>
 
-        </p>
-
-        <!-- Number of people -->
+          <!-- Number of people -->
 
 
-        <!-- Travel class -->
-        <p>
-          <label>Travel Class</label> <br />
-          <select name="travelclass" required>
-            <option selected>Economy</option>
-            <option>Business</option>
-          </select>
-        </p>
+          <!-- Travel class -->
+          <p>
+            <label>Travel Class</label> <br />
+            <select name="travelclass" required>
+              <option selected>Economy</option>
+              <option>Business</option>
+            </select>
+          </p>
 
-        <!-- Submit: Find flights -->
-      </fieldset>
+          <!-- Submit: Find flights -->
+          <input type="submit" value="SEARCH FLIGHTS" id="submit-button"/>
 
-    </form>
+        </fieldset>
 
-    <article>
+      </form>
 
-      <div class="flight-offers-wrapper">
+      <article>
 
-        <h2>Flight offers</h2>
+        <div class="flight-offers-wrapper">
 
-        <div class="flight-offers">
-            <h3>Offers to Asia</h3>
+          <h2>Flight offers</h2>
 
-            <img src="resources/asia.jpg" class="offer-img" alt="Long-tail boats in front of a floating village in Thailand"/>
+          <div class="flight-offers">
+              <h3>Offers to Asia</h3>
 
-            <table>
-              <tr>
-                <th class="offer-destination">Destination</th>
-                <th class="offer-price">Flights from</th>
-              </tr>
-              <tr>
-                <td class="offer-destination">Sanghai</td>
-                <td class="offer-price">599 €</td>
-              </tr>
-              <tr>
-                <td class="offer-destination">Seoul</td>
-                <td class="offer-price">620 €</td>
-              </tr>
-              <tr>
+              <img src="resources/asia.jpg" class="offer-img" alt="Long-tail boats in front of a floating village in Thailand"/>
 
-                <td class="offer-destination">Bangkok</td>
-                <td class="offer-price">550 €</td>
-                <!--<td><a href="!#" title="Bangkok 550 €"> > </a></td>-->
-              </tr>
-            </table>
+              <table>
+                <tr>
+                  <th class="offer-destination">Destination</th>
+                  <th class="offer-price">Flights from</th>
+                </tr>
+                <tr>
+                  <td class="offer-destination">Sanghai</td>
+                  <td class="offer-price">599 €</td>
+                </tr>
+                <tr>
+                  <td class="offer-destination">Seoul</td>
+                  <td class="offer-price">620 €</td>
+                </tr>
+                <tr>
 
-            <p>
-              <a href="#!">See all offers ></a>
-            </p>
+                  <td class="offer-destination">Bangkok</td>
+                  <td class="offer-price">550 €</td>
+                  <!--<td><a href="!#" title="Bangkok 550 €"> > </a></td>-->
+                </tr>
+              </table>
 
-        </div>
+              <p>
+                <a href="#!">See all offers ></a>
+              </p>
 
-        <div class="flight-offers">
-            <h3>Offers to Europe</h3>
+          </div>
 
-            <img src="resources/europe.jpg" class="offer-img" alt="Photo of Trafalqar Square in London, Big Ben in the background"/>
+          <div class="flight-offers">
+              <h3>Offers to Europe</h3>
 
-            <table>
-              <tr>
-                <th class="offer-destination">Destination</th>
-                <th class="offer-price">Flights from</th>
-              </tr>
-              <tr>
-                <td class="offer-destination">Berlin</td>
-                <td class="offer-price">119 €</td>
-              </tr>
-              <tr>
-                <td class="offer-destination">London</td>
-                <td class="offer-price">139 €</td>
-              </tr>
-              <tr>
-                <td class="offer-destination">Copenhagen</td>
-                <td class="offer-price">99 €</td>
-              </tr>
-            </table>
+              <img src="resources/europe.jpg" class="offer-img" alt="Photo of Trafalqar Square in London, Big Ben in the background"/>
 
-            <p>
-              <a href="#!">See all offers ></a>
-            </p>
+              <table>
+                <tr>
+                  <th class="offer-destination">Destination</th>
+                  <th class="offer-price">Flights from</th>
+                </tr>
+                <tr>
+                  <td class="offer-destination">Berlin</td>
+                  <td class="offer-price">119 €</td>
+                </tr>
+                <tr>
+                  <td class="offer-destination">London</td>
+                  <td class="offer-price">139 €</td>
+                </tr>
+                <tr>
+                  <td class="offer-destination">Copenhagen</td>
+                  <td class="offer-price">99 €</td>
+                </tr>
+              </table>
 
-        </div>
+              <p>
+                <a href="#!">See all offers ></a>
+              </p>
 
-        <div class="flight-offers">
+          </div>
 
-            <h3>Business Class Offers</h3>
+          <div class="flight-offers">
 
-            <img src="resources/business.jpg" class="offer-img" alt="Wing of a plane and clouds coloured pink by sundown"/>
+              <h3>Business Class Offers</h3>
 
-            <table>
-              <tr>
-                <th class="offer-destination">Destination</th>
-                <th class="offer-price">Flights from</th>
-              </tr>
-              <tr>
-                <td class="offer-destination">Beijing</td>
-                <td class="offer-price">2222 €</td>
-              </tr>
-              <tr>
-                <td class="offer-destination">Singapore</td>
-                <td class="offer-price">2666 €</td>
-              </tr>
-              <tr>
-                <td class="offer-destination">Shanghai</td>
-                <td class="offer-price">2889 €</td>
-              </tr>
-            </table>
+              <img src="resources/business.jpg" class="offer-img" alt="Wing of a plane and clouds coloured pink by sundown"/>
 
-            <p>
-              <a href="#!">See all business class offers ></a>
-            </p>
-        </div>
+              <table>
+                <tr>
+                  <th class="offer-destination">Destination</th>
+                  <th class="offer-price">Flights from</th>
+                </tr>
+                <tr>
+                  <td class="offer-destination">Beijing</td>
+                  <td class="offer-price">2222 €</td>
+                </tr>
+                <tr>
+                  <td class="offer-destination">Singapore</td>
+                  <td class="offer-price">2666 €</td>
+                </tr>
+                <tr>
+                  <td class="offer-destination">Shanghai</td>
+                  <td class="offer-price">2889 €</td>
+                </tr>
+              </table>
 
-      </div> <!-- class = "flight-offers-wrapper" -->
+              <p>
+                <a href="#!">See all business class offers ></a>
+              </p>
+          </div>
 
-    </article>
+        </div> <!-- class = "flight-offers-wrapper" -->
 
-  </main>
+      </article>
+
+    </main>
+
+  </div> <!-- Content before the footer ends -->
 
   <!-- The footer of the page -->
   <footer>
 
-    <!-- Links for travel extras -->
-    <div class="linkset" class="travel-extras">
-      <h3>Travel Extras</h3>
+    <div class="content-wrapper">
 
-      <ul>
-        <li>
-          <a href="#!">Extras for your flight</a>
-        </li>
-        <li>
-          <a href="#!">Hotels</a>
-        </li>
-        <li>
-          <a href="#!">Car Rentals</a>
-        </li>
-      </ul>
+      <div class="linkset">
+        <h2>ABOUT DIVIDED</h2>
+
+        <ul>
+          <li>
+            <a href="#!">Our Company</a>
+          </li>
+          <li>
+            <a href="#!">Careers</a>
+          </li>
+          <li>
+            <a href="#!">Moe about Divided</a>
+          </li>
+          <li>
+            <a href="https://www.oneworld.com/">OneWorld</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Links for travel extras -->
+      <div class="linkset travel-extras">
+        <h2>TRAVEL EXTRAS</h2>
+
+        <ul>
+          <li>
+            <a href="#!">Extras for your flight</a>
+          </li>
+          <li>
+            <a href="#!">Hotels</a>
+          </li>
+          <li>
+            <a href="#!">Car rentals</a>
+          </li>
+          <li>
+            <a href="#!">Book tours and activities</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Customer Service Links -->
+      <div class="linkset customer-service-links">
+        <h2>CUSTOMER SERVICE</h2>
+
+        <ul>
+          <li>
+            <a href="#!">Manage Booking</a>
+          </li>
+          <li>
+            <a href="#!">Online Help</a>
+          </li>
+          <li>
+            <a href="#!">FAQ</a>
+          </li>
+          <li>
+            <a href="#!">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Social Media links -->
+      <div class="linkset social-links">
+        <h2>FOLLOW US</h2>
+        <ul>
+          <li>
+            <a href="#!">Facebook</a>
+          </li>
+          <li>
+            <a href="#!">Instagram</a>
+          </li>
+          <li>
+            <a href="#!">Twitter</a>
+          </li>
+          <li>
+            <a href="#!">Divided Blog</a>
+          </li>
+          <li>
+            <a href="#!">YouTube</a>
+          </li>
+          <li>
+            <a href="#!">Newsletter</a>
+          </li>
+          <li>
+            <a href="#!">Divided application</a>
+          </li>
+        </ul>
+      </div>
+
     </div>
-
-    <!-- Customer Service Links -->
-    <div class="linkset" class="customer-service-links">
-      <h3>Customer Service</h3>
-
-      <ul>
-        <li>
-          <a href="#!">Manage Booking</a>
-        </li>
-        <li>
-          <a href="#!">Online Help</a>
-        </li>
-        <li>
-          <a href="#!">FAQ</a>
-        </li>
-        <li>
-          <a href="#!">Contact Us</a>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Social Media links -->
-    <div class="linkset" class="social-links">
-      <h3>Follow Us</h3>
-      <ul>
-        <li>
-          <a href="#!">Facebook</a>
-        </li>
-        <li>
-          <a href="#!">Instagram</a>
-        </li>
-        <li>
-          <a href="#!">Twitter</a>
-        </li>
-        <li>
-          <a href="#!">Divided Blog</a>
-        </li>
-        <li>
-          <a href="#!">YouTube</a>
-        </li>
-        <li>
-          <a href="#!">Newsletter</a>
-        </li>
-        <li>
-          <a href="#!">Divided application</a>
-        </li>
-      </ul>
-    </div>
-
-    <p>
-      Divided Airlines is part of the <a href="https://www.oneworld.com/">One World</a> family.
-    </p>
-
-    <!-- Customer service -->
 
     <!-- Copyright -->
-    <p>© 2017 Divided Airlines</p>
+    <div class="copyright">
+      <p>© 2017 Divided Airlines</p>
+    </div>
 
   </footer>
 </body>
