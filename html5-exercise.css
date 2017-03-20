@@ -70,6 +70,7 @@ header nav ul li {
 header nav ul li a {
   display: inline-block;
   padding: 15px 20px 15px 20px;
+  color: #fff;
 
   text-decoration: none;
 }
