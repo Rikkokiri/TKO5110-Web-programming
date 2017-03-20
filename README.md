@@ -8,7 +8,4 @@ Web development self-study course organised by the IT department of University o
   <li>
     <a href="html5-exercise.html">HTML Exercise</a>
   </li>
-  <li>
-  <a href="!#">CSS Exercise</a>
-  </li>
 </ol>
