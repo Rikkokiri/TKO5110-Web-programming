@@ -134,25 +134,26 @@ p#triptype {
   float: right;
 }
 
+/* - - - General section wrapper - - - */
 
-/* - - - Flight offers - - - */
-
-.flight-offers-wrapper {
+.section-wrapper {
   text-align: center;
   margin-top: 50px;
   margin-bottom: 50px;
 }
 
-.flight-offers-wrapper h2, h3 {
-  text-align: left;
+.section-wrapper h2 {
+  margin-top: 30px;
+  padding-bottom: 0;
+  margin-bottom: 15px;
+
+  font-size: 2rem;
 }
 
-.flight-offers-wrapper h2 {
-  margin-top: 30px;
+/* - - - Flight offers - - - */
 
-  padding-left: 18px;
-  padding-bottom: 0;
-  margin-bottom: 5px;
+.flight-offers-wrapper h3 {
+  text-align: left;
 }
 
 .flight-offers-wrapper h3 {
@@ -202,6 +203,62 @@ p#triptype {
   width: 100%;
   padding-bottom: 10px;
 }
+
+/* - - - Simple promotion section - - - */
+
+.simple-promote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-top: 0.5px solid #004b9b;
+  border-bottom: 0.5px solid #004b9b;
+
+  margin: 0 auto;
+  width: 60%;
+
+  font-size: 1.5rem;
+
+  margin-bottom: 50px;
+}
+
+.simple-promote a {
+  text-decoration: none;
+}
+
+/* - - - Book your whole trip... - - - */
+
+.trip-service {
+  position: relative;
+  width: 30%;
+  display: inline-block;
+  margin: 10px;
+  padding: 5px;
+}
+
+.trip-service img {
+  width: 100%;
+  opacity: 0.95;
+}
+
+.trip-service h3 {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 100%;
+  max-height: 100%;
+  margin: -0.25rem 0 0 0;
+
+  font-size: 1.75rem;
+  color: white;
+  text-shadow: 0px 0px 15px #000;
+}
+
+
+/* - - - Explore destinations - - - */
+
 
 
 /* - - -  FOOTER STYLING - - - */
