@@ -32,6 +32,7 @@ body {
 
 body a {
   color: #004b9b;
+  text-decoration: none;
 }
 
 header h1 {
@@ -138,25 +139,32 @@ p#triptype {
 
 .section-wrapper {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 60px;
   margin-bottom: 50px;
 }
 
 .section-wrapper h2 {
   margin-top: 30px;
   padding-bottom: 0;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 
   font-size: 2rem;
+}
+
+.text-over-img {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 100%;
+  max-height: 100%;
 }
 
 /* - - - Flight offers - - - */
 
 .flight-offers-wrapper h3 {
-  text-align: left;
-}
-
-.flight-offers-wrapper h3 {
+  text-align: center;
   padding-top: 0;
   margin-top: 0;
 }
@@ -242,24 +250,69 @@ p#triptype {
 }
 
 .trip-service h3 {
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  width: 100%;
-  max-height: 100%;
   margin: -0.25rem 0 0 0;
 
   font-size: 1.75rem;
-  color: white;
+  color: #fff;
   text-shadow: 0px 0px 15px #000;
 }
 
 
 /* - - - Explore destinations - - - */
 
+div.destination {
+  position: relative;
+  width: 23%;
+  display: inline-block;
+  margin: 7px;
+}
 
+.destination img {
+  width: 100%;
+}
+
+.destination a {
+  text-decoration: none;
+}
+
+.destination h3 {
+
+}
+
+.destination h4 {
+  margin: 1.25rem 0 0 0;
+
+  color: #fff;
+  font-size: 1.65rem;
+  text-shadow: 0px 0px 10px #000;
+}
+
+/* - - - Reasons to fly Divided - - - */
+
+.reason {
+  position: relative;
+  width: 32.5%;
+  display: inline-block;
+}
+
+.reason img {
+  width: 95%;
+}
+
+
+/* - - - See more button - - - */
+
+.see-more {
+  display: inline-block;
+  background-color: #004b9b;
+  font-size: 1rem;
+  margin: 20px auto;
+  padding: 10px 20px 10px 20px;
+}
+
+.see-more a {
+  color: #fff;
+}
 
 /* - - -  FOOTER STYLING - - - */
 
@@ -300,9 +353,13 @@ footer .linkset a {
 }
 
 footer .copyright {
+  display: inline-block;
   float: left;
   background-color: #014084;
-  width: 100%;
-  padding-left: 11.5%;
   margin-top: 10px;
+  width: 100%;
+}
+
+footer .copyright p {
+  padding-left: 11.5%;
 }
