@@ -36,11 +36,10 @@ body a {
 }
 
 header h1 {
-  font-family: 'Unica One', cursive;
-  /*font-family: 'Fascinate Inline', cursive;*/
-  /*font-family: 'Lemonada', cursive;*/
-
-  font-size: 4rem;
+  /*font-family: 'Lato', sans-serif;*/
+  /*font-family: 'Audiowide', cursive;*/
+  font-weight: 700;
+  font-size: 3.5rem;
   margin-bottom: 20px;
   margin-left: 10%;
 
@@ -102,24 +101,33 @@ main {
 }
 
 #booking-form fieldset {
-  padding: 10px 30px 10px 30px;
+  padding: 20px 40px 20px 40px;
 }
 
 #booking-form input[type=text], input[type=date] {
   margin-top: 5px;
   padding: 5px 5px 5px 5px;
-  font-size: 1rem;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  width: 80%;
 }
 
-p#triptype {
-  margin-top: 5px;
+div#triptype {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 #oneway {
   margin-left: 20px;
 }
 
-
+#booking-form select {
+  width: 83.5%;
+  font-size: 1.25rem;
+  height: 2.4rem;
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
 
 /* Submit button */
 #booking-form input[type=submit] {
@@ -130,8 +138,21 @@ p#triptype {
   color: #fff;
   background: #004b9b;
   border: 0.5px solid #014084;
+  display: inline-block;
 
-  margin-bottom: 10px;
+  width: 85%;
+}
+
+#booking-form .left-col, .right-col {
+  width: 50%;
+  display: inline-block;
+}
+
+#booking-form .left-col {
+  float: left;
+}
+
+#booking-form .right-col {
   float: right;
 }
 
@@ -173,7 +194,6 @@ p#triptype {
   width: 30%;
   display: inline-block;
   margin: 10px;
-  /*border: 1px solid #000;*/
   padding: 5px;
 
   text-align: left;
@@ -193,7 +213,7 @@ p#triptype {
 
 .flight-offers th {
   color: #004b9b;
-  font-weight: 100;
+  font-weight: 700;
 }
 
 .flight-offers tr {
@@ -201,7 +221,6 @@ p#triptype {
 }
 
 .flight-offers table, th, td {
-  /*border: 1px dotted #000;*/
   border-collapse: collapse;
   padding: 10px 20px 10px 20px;
 }

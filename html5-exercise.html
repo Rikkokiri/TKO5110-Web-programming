@@ -13,12 +13,8 @@
   -->
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-
-
-  <link href="https://fonts.googleapis.com/css?family=Unica+One" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Fascinate+Inline" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Lemonada" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
 
 
   <!-- Stylesheet -->
@@ -30,8 +26,8 @@
 
     <header>
 
-      <h1>Divided Airlines</h1>
-      <!-- <h1>DIVIDED AIRLINES</h1> -->
+      <!-- <h1>Divided Airlines</h1> -->
+      <h1>DIVIDED AIRLINES</h1>
 
       <!-- MAIN PAGE NAVIGATION -->
       <nav>
@@ -56,55 +52,69 @@
             <legend>Book Flights</legend>
 
           <!-- Rountrip or one-way -->
-          <p id="triptype">
+          <div id="triptype">
             <input name="ticket-type" type="radio" value="roundtrip" checked required/>
             <label>Roundtrip</label>
 
             <input name="ticket-type" id="oneway" type="radio" value="oneway" required/>
             <label>One-way</label>
-          </p>
+          </div>
 
           <!-- From -->
-          <div id="depature-city">
+          <div id="depature-city" class="left-col">
             <label>From</label> <br />
             <input name="from" type="text" placeholder="From" size="30" required />
           </div>
 
           <!-- To -->
-          <div id="destination-city">
+          <div id="destination-city" class="right-col">
             <label>To</label> <br />
             <input name="destination" type="text" placeholder="Where would you like to go?" size="30" required />
           </div>
 
           <!-- Departure date -->
-          <p>
+          <div class="left-col">
             <label>Departure Date</label> <br />
             <input name="departure-date" type="date" required />
-          </p>
+          </div>
 
           <!-- Return date -->
-          <p>
+          <div class="right-col">
             <label>Return Date</label> <br />
             <input name="return-date" type="date" />
-          </p>
+          </div>
 
           <!-- Number of people -->
-          <o>
-            <label>Number of passengers</label>
-
-          </o>
+          <div class="left-col">
+            <label>Number of passengers</label> <br />
+            <select name="passengers" required>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+            </select>
+          </div>
 
           <!-- Travel class -->
-          <p>
+          <div class="right-col">
             <label>Travel Class</label> <br />
             <select name="travelclass" required>
               <option selected>Economy</option>
               <option>Business</option>
             </select>
-          </p>
+          </div>
+
+          <div class="left-col"></div>
 
           <!-- Submit: Find flights -->
-          <input type="submit" value="SEARCH FLIGHTS" id="submit-button"/>
+          <div class="right-col">
+            <input type="submit" value="SEARCH FLIGHTS" />
+          </div>
 
         </fieldset>
 
