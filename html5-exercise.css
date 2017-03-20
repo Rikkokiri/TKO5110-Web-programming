@@ -314,6 +314,68 @@ div.destination {
   color: #fff;
 }
 
+/* - - - TRAVEL GUIDES - - - */
+
+.travel-guide {
+  position: relative;
+  border-top: 0.5px solid #004b9b;
+  border-bottom: 0.5px solid #004b9b;
+  text-align: left;
+  margin: 0px 15px 0px 15px;
+  padding: 25px 0px 25px 0px;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.travel-guide h2 {
+  margin-top: 0px;
+  margin-bottom: 25px;
+}
+
+.travel-guide p {
+  font-size: 1rem;
+  margin-bottom: 25px;
+}
+
+.travel-guide ul {
+  list-style: none;
+  margin-bottom: 30px;
+  padding-left: 0;
+}
+
+.travel-guide ul li {
+  font-size: 1.3rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.travel-guide .arrow {
+  background-color: #004b9b;
+  color: white;
+  font-size: 1.1rem;
+  padding: 2px 8px 2px 8px;
+  margin-right: 5px;
+}
+
+.travel-guide .text-content {
+  display: inline-block;
+  order: 1;
+  width: 50%;
+}
+
+.travel-guide .image-container {
+  order: 2;
+  display: inline-block;
+  width: 50%;
+}
+
+.travel-guide .image-container img {
+  width: 100%;
+  float: right;
+  display: inline-block;
+}
+
 /* - - -  FOOTER STYLING - - - */
 
 footer {
