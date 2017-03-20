@@ -92,10 +92,21 @@ main {
 
 #booking-form {
   margin: 0 15px 0 15px;
+  font-size: 1rem;
 }
 
 #booking-form legend {
   font-size: 1.5rem;
+}
+
+#booking-form fieldset {
+  padding: 10px 30px 10px 30px;
+}
+
+#booking-form input[type=text], input[type=date] {
+  margin-top: 5px;
+  padding: 5px 5px 5px 5px;
+  font-size: 1rem;
 }
 
 p#triptype {
@@ -107,14 +118,19 @@ p#triptype {
 }
 
 
+
+/* Submit button */
 #booking-form input[type=submit] {
-  padding: 10px 20px 10px 20px;
+  padding: 10px 30px 10px 30px;
   border-radius: 3px;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 1.2rem;
   color: #fff;
   background: #004b9b;
   border: 0.5px solid #014084;
+
+  margin-bottom: 10px;
+  float: right;
 }
 
 
