@@ -6,7 +6,7 @@ Web development self-study course organised by the IT department of University o
 <h2>Assigments</h2>
 <ol>
   <li>
-    <a href="html-exercise.html">HTML Exercise</a>
+    <a href="html5-exercise.html">HTML Exercise</a>
   </li>
   <li>
   <a href="!#">CSS Exercise</a>
