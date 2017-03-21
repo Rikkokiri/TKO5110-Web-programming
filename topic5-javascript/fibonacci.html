@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fibonacci sequence</title>
+  <meta charset="utf-8" />
+
+  <!-- 3. Write an HTML5 page containing JavaScript code, which prompts user to give integer value n, then computes n fibonacci numbers. -->
+  <script>
+
+    function fibonacci(){
+      var input = window.prompt("Please input a positive integer:");
+
+      // Check that n is a number & a positive integer
+      while(isNaN(input) || input < 0 || !isInt(input)){
+          var input = window.prompt("Invalid input. Please input a positive integer.");
+      }
+
+      var r = document.getElementById("result-display");
+      var fib = [];
+
+      fib[0] = 0;
+      fib[1] = 1;
+      r.innerHTML = fib[1] + ", ";
+
+      for(var i = 2; i <= input; i++ ){
+        fib[i] = fib[i - 2] + fib[i - 1];
+        r.innerHTML += fib[i];
+
+        if(i != input){
+          r.innerHTML += ", ";
+        }
+      }
+
+    }
+
+    // Check that the value is an integer
+    function isInt(n) {
+      return n % 1 === 0;
+    }
+
+    document.addEventListener("DOMContentLoaded", fibonacci);
+  </script>
+
+</head>
+<body>
+
+  <p id="result-display"></p>
+
+</body>
+</html>

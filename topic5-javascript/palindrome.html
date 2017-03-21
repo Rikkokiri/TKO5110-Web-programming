@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Q3: Three Integers</title>
+  <meta charset="utf-8" />
+
+</head>
+<body>
+
+  <!-- 5. Write a JavaScript function, which tests if given string is palindromic. -->
+  <script>
+
+    function isPalindrome(str){
+
+      if(str.length <= 1){
+        return true;
+      }
+      else if( str.charAt(0) != str.charAt(str.length - 1) ){
+        return false;
+      }
+      else {
+        return isPalindrome(str.substring(1, str.length-1));
+      }
+
+    }
+
+    function inputStr(){
+      var input = window.prompt("Give a string");
+      var result = isPalindrome(input.toLowerCase());
+
+      var feedback;
+
+      if(result){
+        feedback = " is palindrome.";
+      } else {
+        feedback = " is not a palindrome";
+      }
+
+      window.alert("String " + input + feedback);
+    }
+
+    document.addEventListener("DOMContentLoaded", inputStr);
+
+  </script>
+
+</body>
+</html>

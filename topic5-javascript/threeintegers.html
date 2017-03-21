@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Q3: Three Integers</title>
+  <meta charset="utf-8" />
+
+  <style>
+
+    table, th, td {
+      border: 1px solid black;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 5px 10px 5px 10px;
+      text-align: center;
+    }
+
+  </style>
+
+  <!--
+  4. Write an HTML5 page containing JavaScript code, which asks user to feed three integers,
+  then your code calculates the sum, maximum and minimum of these values and prints
+  an HTML table, where these value are placed.
+  -->
+  <script>
+
+    function threeIntegers(){
+      var numbers = [];
+
+      for(var i = 0; i < 3; i++){
+        numbers[i] = getInput();
+      }
+
+      var sum = 0;
+      for(var i = 0; i < numbers.length; i++){
+        sum += numbers[i];
+      }
+
+      var max = Math.max.apply(Math, numbers);
+      var min = Math.min.apply(Math, numbers);
+
+      var results = [{name: "Sum", value: sum},
+                    {name: "Max", value: max},
+                    {name: "Min", value: min}];
+
+      createTable(results);
+
+    }
+
+    function createTable(results) {
+
+      var rowElement = null;
+      var table = document.createElement("table");
+      // create 10 table rows, each with two cells
+
+      for (var i = 0; i < results.length; i++) {
+        rowElement = table.insertRow();  // Create a table row
+        rowElement.insertCell().textContent = results[i].name;
+        rowElement.insertCell().textContent = results[i].value;
+      }
+      document.body.appendChild(table);
+    }
+
+    /* Get integer input from the user */
+    function getInput(){
+      var input = window.prompt("Please input an integer:");
+      // Check that n is a number & an integer
+      while(isNaN(input) || !isInt(input)){
+          var input = window.prompt("Invalid input. Please input a positive integer.");
+      }
+      return Number(input);
+    }
+
+    function isInt(n) {
+      return n % 1 === 0;
+    }
+
+    document.addEventListener("DOMContentLoaded", threeIntegers);
+
+  </script>
+
+</head>
+<body>
+
+</body>
+</html>
