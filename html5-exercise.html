@@ -27,7 +27,7 @@
     <header>
 
       <!-- <h1>Divided Airlines</h1> -->
-      <h1>DIVIDED AIRLINES</h1>
+      <h1 id="top-of-the-page">DIVIDED AIRLINES</h1>
 
       <!-- MAIN PAGE NAVIGATION -->
       <nav>
@@ -53,63 +53,63 @@
 
           <!-- Rountrip or one-way -->
           <div id="triptype">
-            <input name="ticket-type" type="radio" value="roundtrip" checked required/>
-            <label>Roundtrip</label>
+            <input name="ticket-type" id="roundtrip" type="radio" value="roundtrip" checked required/>
+            <label for="roundtrip">Roundtrip</label>
 
             <input name="ticket-type" id="oneway" type="radio" value="oneway" required/>
-            <label>One-way</label>
+            <label for="oneway">One-way</label>
           </div>
 
           <!-- From -->
           <div id="depature-city" class="left-col">
-            <label>From</label> <br />
-            <input name="from" type="text" placeholder="From" size="30" required />
+            <label for="from-airport">From</label> <br />
+            <input name="departure location" id="from-airport" type="text" placeholder="From" size="30" required />
           </div>
 
           <!-- To -->
           <div id="destination-city" class="right-col">
-            <label>To</label> <br />
-            <input name="destination" type="text" placeholder="Where would you like to go?" size="30" required />
+            <label for="to-airport">To</label> <br />
+            <input name="destination" id="to-airport" type="text" placeholder="Where would you like to go?" size="30" required />
           </div>
 
           <!-- Departure date -->
           <div class="left-col">
-            <label>Departure Date</label> <br />
-            <input name="departure-date" type="date" required />
+            <label for="departure-date">Departure Date</label> <br />
+            <input name="departure-date" id="departure-date" type="date" required />
           </div>
 
           <!-- Return date -->
           <div class="right-col">
-            <label>Return Date</label> <br />
-            <input name="return-date" type="date" />
+            <labe for="return-date"l>Return Date</label> <br />
+            <input name="return-date" id="return-date" type="date" />
           </div>
 
           <!-- Number of people -->
           <div class="left-col">
-            <label>Number of passengers</label> <br />
-            <select name="passengers" required>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-              <option>9</option>
+            <label for="passengers">Number of passengers</label> <br />
+            <select name="number-of-passengers" id="passengers" required>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
             </select>
           </div>
 
           <!-- Travel class -->
           <div class="right-col">
-            <label>Travel Class</label> <br />
-            <select name="travelclass" required>
-              <option selected>Economy</option>
-              <option>Business</option>
+            <label for="travelclass">Travel Class</label> <br />
+            <select name="travelclass" id="travelclass" required>
+              <option value="economy" selected>Economy</option>
+              <option value="business">Business</option>
             </select>
           </div>
 
-          <div class="left-col"></div>
+          <div class="left-col"></div> <!-- For pushing the submit button the it's correct place -->
 
           <!-- Submit: Find flights -->
           <div class="right-col">
@@ -119,7 +119,7 @@
         </fieldset>
       </form>
 
-      <article>
+      <article> <!-- FLIGHT OFFERS -->
         <div class="section-wrapper flight-offers-wrapper">
 
           <h2>Flight offers</h2>
@@ -149,7 +149,7 @@
               </table>
 
               <p>
-                <a href="#!">See all offers ></a>
+                <a href="#!">See all offers to Asia ></a>
               </p>
 
           </div>
@@ -157,7 +157,7 @@
           <div class="flight-offers">
               <h3>Offers to Europe</h3>
 
-              <img src="resources/tallinn.jpg" class="offer-img" alt="Photo of Trafalqar Square in London, Big Ben in the background"/>
+              <img src="resources/tallinn.jpg" class="offer-img" alt="Old colourful stone houses in Tallinn's old town"/>
 
               <table>
                 <tr>
@@ -179,7 +179,7 @@
               </table>
 
               <p>
-                <a href="#!">See all offers ></a>
+                <a href="#!">See all offers to Europe ></a>
               </p>
 
           </div>
@@ -214,7 +214,7 @@
           </div>
 
           <div class="see-more">
-            <a href="#!">See all offers ></a>
+            <a href="#!" title="See all offers">See all offers ></a>
           </div>
 
         </div> <!-- class = "flight-offers-wrapper" -->
@@ -235,14 +235,14 @@
 
           <div class="trip-service">
             <a href="#!">
-              <img src="resources/flowerhouse.jpg" class="offer-img" alt="Long-tail boats in front of a floating village in Thailand"/>
+              <img src="resources/flowerhouse.jpg" class="offer-img" alt="Picturesque brick houses"/>
               <h3 class="text-over-img">Hotels</h3>
             </a>
           </div>
 
           <div class="trip-service">
             <a href="#!">
-              <img src="resources/sevensisters.jpg" class="offer-img" alt="Photo of Trafalqar Square in London, Big Ben in the background"/>
+              <img src="resources/sevensisters.jpg" class="offer-img" alt="Seven Sisters, a group of chalk cliffs by the English Channel in Sussex"/>
               <h3 class="text-over-img">Activities</h3>
             </a>
           </div>
@@ -270,7 +270,7 @@
               <h3>Fly to Italy</h3>
               <h4 class="text-over-img">Rome</h4>
 
-              <img src="resources/rome.jpg" alt="New York skyline"/>
+              <img src="resources/rome.jpg" alt="St Peter's Basilica square viewed from the basilica's tower"/>
             </a>
           </div>
 
@@ -297,7 +297,7 @@
               <h3>Fly to UK</h3>
               <h4 class="text-over-img">London</h4>
 
-              <img src="resources/london1.jpg" />
+              <img src="resources/london1.jpg" alt="Photo of Trafalqar Square in London, Big Ben in the background"/>
             </a>
           </div>
 
@@ -371,6 +371,10 @@
 
         </div>
       </article>
+
+      <div class="top-link">
+        <a href="#top-of-the-page" >Back to the top of the page</a>
+      </div>
 
     </main>
   </div> <!-- Content before the footer ends -->

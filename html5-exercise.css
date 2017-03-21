@@ -375,6 +375,11 @@ div.destination {
   display: inline-block;
 }
 
+.top-link {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
 /* - - -  FOOTER STYLING - - - */
 
 footer {
