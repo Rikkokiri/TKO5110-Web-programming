@@ -79,7 +79,7 @@
 
           <!-- Return date -->
           <div class="right-col">
-            <labe for="return-date"l>Return Date</label> <br />
+            <label for="return-date">Return Date</label> <br />
             <input name="return-date" id="return-date" type="date" />
           </div>
 
@@ -87,6 +87,7 @@
           <div class="left-col">
             <label for="passengers">Number of passengers</label> <br />
             <select name="number-of-passengers" id="passengers" required>
+              <option value="">Select number of passengers</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -103,6 +104,7 @@
           <div class="right-col">
             <label for="travelclass">Travel Class</label> <br />
             <select name="travelclass" id="travelclass" required>
+              <option value="">Select travel class</option>
               <option value="economy" selected>Economy</option>
               <option value="business">Business</option>
             </select>
@@ -220,11 +222,9 @@
       </article>
 
       <!-- Are you earning Divided Points for your flights? -->
-      <article>
-        <div class="simple-promote">
-          <p>Are you earning <a href="#!">Divided Points</a> for your flights?</p>
-        </div>
-      </article>
+      <div class="simple-promote">
+        <p>Are you earning <a href="#!">Divided Points</a> for your flights?</p>
+      </div>
 
       <!-- Book your whole trip -->
       <article>
@@ -257,55 +257,53 @@
       </article>
 
       <!-- EXPLORE DESTINATIONS -->
-      <aticle>
-        <div class="section-wrapper">
+      <div class="section-wrapper">
 
-          <h2>Explore our destinations</h2>
+        <h2>Explore our destinations</h2>
 
-          <p>Top things to experience at our destinations</p>
+        <p>Top things to experience at our destinations</p>
 
-          <div class="destination">
-            <h3>Fly to Italy</h3>
-            <a href="#!">
-              <h4 class="text-over-img">Rome</h4>
+        <div class="destination">
+          <h3>Fly to Italy</h3>
+          <a href="#!">
+            <h4 class="text-over-img">Rome</h4>
 
-              <img src="resources/rome.jpg" alt="St Peter's Basilica square viewed from the basilica's tower"/>
-            </a>
-          </div>
-
-          <div class="destination">
-            <h3>Fly to USA</h3>
-            <a href="#!">
-              <h4 class="text-over-img">New York</h4>
-
-              <img src="resources/newyork.jpg" alt="New York skyline"/>
-            </a>
-          </div>
-
-          <div class="destination">
-            <h3>Fly to Thailand</h3>
-            <a href="#!">
-              <h4 class="text-over-img">Khao Lak</h4>
-
-              <img src="resources/khaolak.jpg" alt="Beach in Khao Lak"/>
-            </a>
-          </div>
-
-          <div class="destination">
-            <h3>Fly to UK</h3>
-            <a href="#!">
-              <h4 class="text-over-img">London</h4>
-
-              <img src="resources/london1.jpg" alt="Photo of Trafalqar Square in London, Big Ben in the background"/>
-            </a>
-          </div>
-
-          <div class="see-more">
-            <a href="#!">See all our destinations ></a>
-          </div>
-
+            <img src="resources/rome.jpg" alt="St Peter's Basilica square viewed from the basilica's tower"/>
+          </a>
         </div>
-      </aticle>
+
+        <div class="destination">
+          <h3>Fly to USA</h3>
+          <a href="#!">
+            <h4 class="text-over-img">New York</h4>
+
+            <img src="resources/newyork.jpg" alt="New York skyline"/>
+          </a>
+        </div>
+
+        <div class="destination">
+          <h3>Fly to Thailand</h3>
+          <a href="#!">
+            <h4 class="text-over-img">Khao Lak</h4>
+
+            <img src="resources/khaolak.jpg" alt="Beach in Khao Lak"/>
+          </a>
+        </div>
+
+        <div class="destination">
+          <h3>Fly to UK</h3>
+          <a href="#!">
+            <h4 class="text-over-img">London</h4>
+
+            <img src="resources/london1.jpg" alt="Photo of Trafalqar Square in London, Big Ben in the background"/>
+          </a>
+        </div>
+
+        <div class="see-more">
+          <a href="#!">See all our destinations ></a>
+        </div>
+
+      </div>
 
       <!-- "Plan your trip with our travel guides" -->
       <article>
