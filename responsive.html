@@ -1,0 +1,207 @@
+<!DOCTYPE html lang="en">
+<html>
+<head>
+  <title>Responsive Web Design - Task 1</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Pilvi Rajala" />
+
+  <!-- Task 1.
+  Study how to use the media queries. Make very simple web page with only few elements and change
+  their background color or size according to viewport size. Select three different sizes. With
+  Firefox or Chrome browsers responsivity is easy to test by selecting developer tools. -->
+
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet">
+
+  <style>
+
+    body, html {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 1.1rem;
+      font-family: 'Cutive Mono', monospace;
+    }
+
+    body p {
+      margin: 0 10% 0 10%;
+    }
+
+    h1 {
+      margin: 3rem 0 2rem 0;
+      font-size: 3rem;
+      font-family: 'Permanent Marker', cursive;
+    }
+
+    .main-container {
+      width: 90%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .quote-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* 800 */
+    @media only screen and (min-width: 600px) {
+
+      body {
+        background-color: rgb(255, 221, 0);
+      }
+
+      .quote-wrapper {
+        width: 25%;
+        margin: 15px 15px 15px 15px;
+        padding: 25px 20px 25px 20px;
+        background-color: rgb(255, 255, 255);
+      }
+
+    }
+
+    /* 500 to 799 */
+    @media only screen and (max-width: 599px) {
+
+      h1 {
+        margin: 2rem 0 1.5rem 0;
+        font-size: 2.5rem;
+      }
+
+      body {
+        background-color: rgb(255, 148, 0);
+        font-size: 0.9rem;
+      }
+
+      .quote-wrapper {
+        width: 40%;
+        margin: 10px 10px 10px 10px;
+        padding: 20px 15px 20px 15px;
+        background-color: #000;
+      }
+
+      div p {
+        color: #fff;
+      }
+
+    }
+
+    /* 320 */
+    @media only screen and (max-width: 320px) {
+
+      h1 {
+        margin: 1.5rem 0 1rem 0;
+        font-size: 2rem;
+        color: #fff;
+      }
+
+      body {
+        background-color: #000;
+        font-size: 0.9rem;
+      }
+
+      .quote-wrapper {
+        min-width: 80%;
+        margin: 10px 10px 10px 10px;
+        padding: 15px 10px 15px 10px;
+        background-color: #fff;
+      }
+
+      p {
+        color: #fff;
+      }
+
+      div p {
+        color: #000;
+      }
+
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <h1>Quotes from Captain Fantastic</h1>
+
+  <p>Captain Fantastic is a 2016 American comedy-drama film written and directed by Matt&nbsp;Ross and starring Viggo&nbsp;Mortensen.</p>
+
+  <div class="main-container">
+
+    <div class="quote-wrapper">
+      <p>
+        "Okay, you can think that, but we don't make fun of people. Right, Dad?" <br />
+        <br />
+        "That's right. We don't make fun of people." <br />
+        <br />
+        "Except Christians."
+      </p>
+    </div>
+
+    <div class="quote-wrapper">
+      <p>
+        "We're just back in the states because of my dad's sabbatical. He's writing a book on Dr. Spock." <br />
+        <br />
+        "Oh, I love Star&nbsp;Trek."
+      </p>
+    </div>
+
+    <div class="quote-wrapper">
+      <p>
+        "It's a beautiful mistake. <br />But a mistake." <br /> -&nbsp;Ben
+      </p>
+    </div>
+
+    <div class="quote-wrapper">
+      <p>
+        "There's no cavalry. No one will magically appear and save you in the end." <br /> -&nbsp;Ben
+      </p>
+    </div>
+
+    <div class="quote-wrapper">
+      <p>
+        "We're defined by our actions, not our words." <br /> -&nbsp;Kielyr
+      </p>
+    </div>
+
+    <div class="quote-wrapper">
+      <p>
+        "Let's dig. <br /> Otherwise she has to lie under that bullshit forever." <br /> -&nbsp;Nai
+      </p>
+    </div>
+
+    <div class="quote-wrapper">
+      <p>
+        "Power to the people!" <br />
+        "Stick it to the man!"
+      </p>
+    </div>
+
+    <div class="quote-wrapper">
+      <p>
+        "I just want to go to college." <br />
+        <br />
+        "You speak six languages. You have high math, theoretical physics! This is what I'm talking about! What the hell are these people going to teach you?" <br />
+      </p>
+    </div>
+
+    <div class="quote-wrapper">
+      <p>
+        "You would prefer to celebrate a&nbsp;magical fictitious elf, instead of a&nbsp;living humanitarian who's done so much to promote human rights and understanding?"
+      </p>
+    </div>
+
+  </div>
+
+
+</body>
+</html>
