@@ -1,0 +1,468 @@
+/* Styling for HTML exercise */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  margin: 0 auto;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.9em;
+}
+
+/* - - - For the sticky footer - - - */
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-image: url("resources/birds2.png");
+  background-repeat: repeat;
+  background-position: center;
+}
+
+.page-content {
+  flex: 1;
+}
+
+/* - - - - - - - - - - - - - - - - - - */
+
+body a {
+  color: #004b9b;
+  text-decoration: none;
+}
+
+body a:hover, body a:focus {
+  text-decoration: underline;
+}
+
+header h1 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  margin-left: 10%;
+  color: #004b9b;
+}
+
+/* - - - HEADER MENU - - - */
+
+#top-menu {
+  margin-bottom: 2rem;
+  background-color: #004b9b;
+  color: #fff;
+}
+
+#top-menu ul {
+  list-style: none;
+  margin: 0;
+  margin-left: 10%;
+  padding: 0;
+  overflow: hidden;
+}
+
+#top-menu li {
+  float: left;
+}
+
+#top-menu .menu-item a {
+  display: inline-block;
+  padding: 15px 20px 15px 20px;
+  color: #fff;
+  text-decoration: none;
+}
+
+#top-menu .menu-item a:hover, #top-menu .menu-item a:focus {
+  background-color: #014084;
+  text-decoration: none;
+}
+
+#top-menu .menu-item a:visited {
+  color: #fff;
+}
+
+/* - - - MAIN - - - */
+
+main {
+  margin: 0 auto;
+  width: 80%;
+}
+
+/* - - - FORM STYLING - - - */
+
+#booking-form {
+  margin: 0 15px 0 15px;
+  font-size: 1rem;
+}
+
+#booking-form legend {
+  font-size: 1.5rem;
+}
+
+#booking-form fieldset {
+  padding: 20px 40px 20px 40px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 5px solid #fff;
+}
+
+#booking-form input[type=text], input[type=date] {
+  margin-top: 5px;
+  padding: 5px 5px 5px 5px;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  width: 80%;
+}
+
+div#triptype {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+#oneway {
+  margin-left: 20px;
+}
+
+#booking-form select {
+  width: 83.5%;
+  font-size: 1.25rem;
+  height: 2.4rem;
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+
+/* Submit button */
+#booking-form input[type=submit] {
+  padding: 10px 30px 10px 30px;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #fff;
+  background: #004b9b;
+  border: 0.5px solid #014084;
+  display: inline-block;
+  width: 83%;
+}
+
+#booking-form input[type=submit]:hover, #booking-form input[type=submit]:focus {
+  background-color: #014084;
+}
+
+#booking-form .left-col, .right-col {
+  width: 50%;
+  display: inline-block;
+}
+
+#booking-form .left-col {
+  float: left;
+}
+
+#booking-form .right-col {
+  float: right;
+}
+
+/* - - - General section wrapper - - - */
+
+.section-wrapper {
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 50px;
+}
+
+.section-wrapper h2 {
+  margin-top: 30px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.text-over-img {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 100%;
+  max-height: 100%;
+}
+
+/* - - - Flight offers - - - */
+
+.flight-offers-wrapper h3 {
+  text-align: center;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.flight-offers {
+  width: 30%;
+  display: inline-block;
+  margin: 10px;
+  padding: 5px;
+  text-align: left;
+}
+
+.flight-offers table {
+  width: 100%;
+}
+
+.flight-offers .offer-destination {
+   text-align: left;
+ }
+
+.flight-offers .offer-price {
+  text-align: right;
+}
+
+.flight-offers th {
+  color: #004b9b;
+  font-weight: 700;
+}
+
+.flight-offers tr {
+  border-bottom: 0.5px solid lightgrey;
+}
+
+.flight-offers table, th, td {
+  border-collapse: collapse;
+  padding: 10px 20px 10px 20px;
+}
+
+/* Image above each flight offer category */
+.flight-offers .offer-img {
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+/* - - - Simple promotion section - - - */
+
+.simple-promote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-top: 0.5px solid #004b9b;
+  border-bottom: 0.5px solid #004b9b;
+
+  margin: 0 auto;
+  width: 60%;
+  font-size: 1.5rem;
+  margin-bottom: 50px;
+}
+
+.simple-promote a {
+  text-decoration: none;
+}
+
+/* - - - Book your whole trip... - - - */
+
+.trip-service {
+  position: relative;
+  width: 30%;
+  display: inline-block;
+  margin: 10px;
+  padding: 5px;
+}
+
+.trip-service img {
+  width: 100%;
+  opacity: 0.95;
+}
+
+.trip-service h3 {
+  margin: -0.25rem 0 0 0;
+  font-size: 1.75rem;
+  color: #fff;
+  text-shadow: 0px 0px 15px #000;
+}
+
+.trip-service a:hover img, .trip-service a:focus img {
+  opacity: 0.85;
+}
+
+/* - - - Explore destinations - - - */
+
+div.destination {
+  position: relative;
+  width: 23%;
+  display: inline-block;
+  margin: 7px;
+}
+
+.destination img {
+  width: 100%;
+}
+
+.destination a {
+  text-decoration: none;
+}
+
+.destination a:hover, .destination a:focus {
+  opacity: 0.85;
+}
+
+.destination h4 {
+  margin: 1.25rem 0 0 0;
+  color: #fff;
+  font-size: 1.65rem;
+  text-shadow: 0px 0px 10px #000;
+}
+
+/* - - - Reasons to fly Divided - - - */
+
+.reason {
+  position: relative;
+  width: 32.5%;
+  display: inline-block;
+}
+
+.reason img {
+  width: 95%;
+}
+
+.reason a:hover, .reason a:focus {
+  opacity: 0.85;
+}
+
+/* - - - See more button - - - */
+
+.see-more {
+  display: inline-block;
+  background-color: #004b9b;
+  font-size: 1rem;
+  margin: 20px auto;
+  padding: 10px 20px 10px 20px;
+}
+
+.see-more:hover, .see-more:focus{
+  background-color: #014084;
+}
+
+.see-more a {
+  color: #fff;
+}
+
+/* - - - TRAVEL GUIDES - - - */
+
+.travel-guide {
+  position: relative;
+  border-top: 0.5px solid #004b9b;
+  border-bottom: 0.5px solid #004b9b;
+  text-align: left;
+  margin: 0px 15px 0px 15px;
+  padding: 25px 0px 25px 0px;
+  display: flex;
+  flex-direction: row;
+}
+
+.travel-guide h2 {
+  margin-top: 0px;
+  margin-bottom: 25px;
+}
+
+.travel-guide p {
+  font-size: 1rem;
+  margin-bottom: 25px;
+}
+
+.travel-guide ul {
+  list-style: none;
+  margin-bottom: 30px;
+  padding-left: 0;
+}
+
+.travel-guide ul li {
+  font-size: 1.3rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.travel-guide .arrow {
+  background-color: #004b9b;
+  color: white;
+  font-size: 1.1rem;
+  padding: 2px 8px 2px 8px;
+  margin-right: 5px;
+}
+
+.travel-guide .text-content {
+  display: inline-block;
+  order: 1;
+  width: 50%;
+}
+
+.travel-guide .image-container {
+  order: 2;
+  display: inline-block;
+  width: 50%;
+}
+
+.travel-guide .image-container img {
+  width: 100%;
+  float: right;
+  display: inline-block;
+}
+
+.top-link {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* - - -  FOOTER STYLING - - - */
+
+footer {
+  background-color: #004b9b;
+  padding-top: 10px;
+}
+
+footer .content-wrapper {
+  width: 77%;
+  margin: 0 auto;
+}
+
+footer .linkset {
+  float: left;
+  display: inline-block;
+  width: 25%;
+  vertical-align: top;
+}
+
+footer h2 {
+  font-size: 1.1rem;
+}
+
+footer .linkset ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+footer .linkset ul li {
+  list-style: none;
+  padding-bottom: 5px;
+}
+
+footer .linkset a {
+  text-decoration: none;
+  color: white;
+}
+
+footer .linkset a:hover, footer .linkset a:focus {
+  text-decoration: underline;
+}
+
+footer .copyright {
+  display: inline-block;
+  float: left;
+  background-color: #014084;
+  margin-top: 10px;
+  width: 100%;
+}
+
+footer .copyright p {
+  color: white;
+  padding-left: 11.5%;
+}

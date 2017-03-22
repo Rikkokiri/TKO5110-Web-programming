@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Divided Airlines</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Pilvi Rajala" />
+
+  <!--
+  3. On previous exercises you made a web page. Now it is time to add some style to it. Use
+  external, internal and inline style to atleast adjust following:
+
+    - Define a background image for your page in external style sheet
+
+    - Define internal style for mouse hovering for one link (anchor) on your page.
+      If your page does not have a link, then add one
+
+    - Write styles for list and or table in your external style, then use inline style to overwrite
+      something in one row/cell in your table or in one item of your list.
+
+  4. Use ID and class selectors in defining styles, Experiment different ways of positioning
+  elements and adjusting their sizes. Stydy how "float" in some element changes the page appearance.
+
+  5. Use CSS validator to validate your external style sheet
+  -->
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet" type="text/css">
+
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" type="text/css" href="css-exercise.css" />
+
+  <style type="text/css">
+
+    .top-link a:hover, .top-link a:focus {
+      color: red;
+    }
+
+  </style>
+
+</head>
+<body>
+  <div class="page-content">
+
+    <header>
+
+      <h1 id="top-of-the-page">DIVIDED AIRLINES</h1>
+
+      <!-- MAIN PAGE NAVIGATION -->
+      <nav id="top-menu">
+        <ul>
+          <li class="menu-item"><a href="#!">Home</a></li>
+          <li class="menu-item"><a href="#!">Destinations</a></li>
+          <li class="menu-item"><a href="#!">Information and Services</a></li>
+          <li class="menu-item"><a href="#!">Customer Support</a></li>
+          <li class="menu-item"><a href="#!">Business Travel</a></li>
+          <li class="menu-item"><a href="#!">Frequent Flyer</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- MAIN BODY OF THE PAGE -->
+    <main>
+
+      <!-- Form for booking flights -->
+      <form id="booking-form" method="post" action="">
+
+        <fieldset>
+            <legend>Book Flights</legend>
+
+          <!-- Rountrip or one-way -->
+          <div id="triptype">
+            <input name="ticket-type" id="roundtrip" type="radio" value="roundtrip" checked required/>
+            <label for="roundtrip">Roundtrip</label>
+
+            <input name="ticket-type" id="oneway" type="radio" value="oneway" required/>
+            <label for="oneway">One-way</label>
+          </div>
+
+          <!-- From -->
+          <div id="depature-city" class="left-col">
+            <label for="from-airport">From</label> <br />
+            <input name="departure location" id="from-airport" type="text" placeholder="From" size="30" required />
+          </div>
+
+          <!-- To -->
+          <div id="destination-city" class="right-col">
+            <label for="to-airport">To</label> <br />
+            <input name="destination" id="to-airport" type="text" placeholder="Where would you like to go?" size="30" required />
+          </div>
+
+          <!-- Departure date -->
+          <div class="left-col">
+            <label for="departure-date">Departure Date</label> <br />
+            <input name="departure-date" id="departure-date" type="date" required />
+          </div>
+
+          <!-- Return date -->
+          <div class="right-col">
+            <label for="return-date">Return Date</label> <br />
+            <input name="return-date" id="return-date" type="date" />
+          </div>
+
+          <!-- Number of people -->
+          <div class="left-col">
+            <label for="passengers">Number of passengers</label> <br />
+            <select name="number-of-passengers" id="passengers" required>
+              <option value="">Select number of passengers</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+          </div>
+
+          <!-- Travel class -->
+          <div class="right-col">
+            <label for="travelclass">Travel Class</label> <br />
+            <select name="travelclass" id="travelclass" required>
+              <option value="">Select travel class</option>
+              <option value="economy" selected>Economy</option>
+              <option value="business">Business</option>
+            </select>
+          </div>
+
+          <div class="left-col"></div> <!-- For pushing the submit button the it's correct place -->
+
+          <!-- Submit: Find flights -->
+          <div class="right-col">
+            <input type="submit" value="SEARCH FLIGHTS" />
+          </div>
+
+        </fieldset>
+      </form>
+
+      <article> <!-- FLIGHT OFFERS -->
+        <div class="section-wrapper flight-offers-wrapper">
+
+          <h2>Flight offers</h2>
+
+          <div class="flight-offers">
+              <h3>Offers to Asia</h3>
+
+              <img src="resources/asia.jpg" class="offer-img" alt="Long-tail boats in front of a floating village in Thailand"/>
+
+              <table>
+                <tr>
+                  <th class="offer-destination">Destination</th>
+                  <th class="offer-price">Flights from</th>
+                </tr>
+                <tr>
+                  <td class="offer-destination">Sanghai</td>
+                  <td class="offer-price">599 €</td>
+                </tr>
+                <tr style="background-color: rgba(255, 255, 255, 0.5)">
+                  <td class="offer-destination">Seoul</td>
+                  <td class="offer-price">620 €</td>
+                </tr>
+                <tr>
+                  <td class="offer-destination">Bangkok</td>
+                  <td class="offer-price">550 €</td>
+                </tr>
+              </table>
+
+              <p>
+                <a href="#!">See all offers to Asia ></a>
+              </p>
+
+          </div>
+
+          <div class="flight-offers">
+              <h3>Offers to Europe</h3>
+
+              <img src="resources/tallinn.jpg" class="offer-img" alt="Old colourful stone houses in Tallinn's old town"/>
+
+              <table>
+                <tr>
+                  <th class="offer-destination">Destination</th>
+                  <th class="offer-price">Flights from</th>
+                </tr>
+                <tr>
+                  <td class="offer-destination">Berlin</td>
+                  <td class="offer-price">119 €</td>
+                </tr>
+                <tr style="background-color: rgba(255, 255, 255, 0.5)">
+                  <td class="offer-destination">London</td>
+                  <td class="offer-price">139 €</td>
+                </tr>
+                <tr>
+                  <td class="offer-destination">Copenhagen</td>
+                  <td class="offer-price">99 €</td>
+                </tr>
+              </table>
+
+              <p>
+                <a href="#!">See all offers to Europe ></a>
+              </p>
+
+          </div>
+
+          <div class="flight-offers">
+              <h3>Business Class Offers</h3>
+
+              <img src="resources/business.jpg" class="offer-img" alt="Wing of a plane and clouds coloured pink by sundown"/>
+
+              <table>
+                <tr>
+                  <th class="offer-destination">Destination</th>
+                  <th class="offer-price">Flights from</th>
+                </tr>
+                <tr>
+                  <td class="offer-destination">Beijing</td>
+                  <td class="offer-price">2222 €</td>
+                </tr>
+                <tr style="background-color: rgba(255, 255, 255, 0.5)">
+                  <td class="offer-destination">Singapore</td>
+                  <td class="offer-price">2666 €</td>
+                </tr>
+                <tr>
+                  <td class="offer-destination">Shanghai</td>
+                  <td class="offer-price">2889 €</td>
+                </tr>
+              </table>
+
+              <p>
+                <a href="#!">See all business class offers ></a>
+              </p>
+          </div>
+
+          <div class="see-more">
+            <a href="#!" title="See all offers">See all offers ></a>
+          </div>
+
+        </div> <!-- class = "flight-offers-wrapper" -->
+      </article>
+
+      <!-- Are you earning Divided Points for your flights? -->
+      <div class="simple-promote">
+        <p>Are you earning <a href="#!">Divided Points</a> for your flights?</p>
+      </div>
+
+      <!-- Book your whole trip -->
+      <article>
+        <div class="section-wrapper">
+
+          <h2>Book your whole trip</h2>
+
+          <div class="trip-service">
+            <a href="#!">
+              <img src="resources/flowerhouse.jpg" class="offer-img" alt="Picturesque brick houses"/>
+              <h3 class="text-over-img">Hotels</h3>
+            </a>
+          </div>
+
+          <div class="trip-service">
+            <a href="#!">
+              <img src="resources/sevensisters.jpg" class="offer-img" alt="Seven Sisters, a group of chalk cliffs by the English Channel in Sussex"/>
+              <h3 class="text-over-img">Activities</h3>
+            </a>
+          </div>
+
+          <div class="trip-service">
+            <a href="#!">
+              <img src="resources/cars.jpg" class="offer-img" alt="Red car speeding on a road lined by trees"/>
+              <h3 class="text-over-img">Cars</h3>
+            </a>
+          </div>
+
+        </div> <!-- class = "flight-offers-wrapper" -->
+      </article>
+
+      <!-- EXPLORE DESTINATIONS -->
+      <div class="section-wrapper">
+
+        <h2>Explore our destinations</h2>
+
+        <p>Top things to experience at our destinations</p>
+
+        <div class="destination">
+          <h3>Fly to Italy</h3>
+          <a href="#!">
+            <h4 class="text-over-img">Rome</h4>
+
+            <img src="resources/rome.jpg" alt="St Peter's Basilica square viewed from the basilica's tower"/>
+          </a>
+        </div>
+
+        <div class="destination">
+          <h3>Fly to USA</h3>
+          <a href="#!">
+            <h4 class="text-over-img">New York</h4>
+
+            <img src="resources/newyork.jpg" alt="New York skyline"/>
+          </a>
+        </div>
+
+        <div class="destination">
+          <h3>Fly to Thailand</h3>
+          <a href="#!">
+            <h4 class="text-over-img">Khao Lak</h4>
+
+            <img src="resources/khaolak.jpg" alt="Beach in Khao Lak"/>
+          </a>
+        </div>
+
+        <div class="destination">
+          <h3>Fly to UK</h3>
+          <a href="#!">
+            <h4 class="text-over-img">London</h4>
+
+            <img src="resources/london1.jpg" alt="Photo of Trafalqar Square in London, Big Ben in the background"/>
+          </a>
+        </div>
+
+        <div class="see-more">
+          <a href="#!">See all our destinations ></a>
+        </div>
+
+      </div>
+
+      <!-- "Plan your trip with our travel guides" -->
+      <article>
+        <div class="section-wrapper travel-guide">
+
+          <div class="text-content">
+            <h2>Plan your trip with our <br />travel guides</h2>
+
+            <p>Find out what to see and experience at our destinations.</p>
+
+            <ul>
+              <li>
+                <a href="#!"><span class="arrow">></span> Travel guides to Europe</a>
+              </li>
+              <li>
+                <a href="#!"><span class="arrow">></span> Travel guides to Asia</a>
+              </li>
+              <li>
+                <a href="#!"><span class="arrow">></span> Travel guides to North America</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="image-container">
+            <img src="resources/thailand.jpg" alt="Mountains in Thailand" />
+          </div>
+        </div>
+      </article>
+
+      <!-- Reasons to fly Divided -->
+      <article>
+        <div class="section-wrapper">
+          <h2>Reasons to fly Divided</h2>
+
+          <!-- Our fleet is modern and ecological -->
+          <div class="reason">
+            <a href="#!">
+              <h3>Our fleet <br />is modern and ecological</h3>
+              <img src="resources/fleet.jpg" alt="People sitting in an aeroplane"/>
+            </a>
+          </div>
+
+          <!-- Fly direct to 100 destinations -->
+          <div class="reason">
+            <a href="#!">
+              <h3>Fly direct <br /> to 100 destinations</h3>
+              <img src="resources/dayplane.jpg" alt="Wing of a plane" />
+            </a>
+          </div>
+
+          <!-- Enjoy the great benefits of Divided Premium program -->
+          <div class="reason">
+            <a href="#!">
+              <h3>Enjoy the great benefits <br /> of Divided Premium program</h3>
+              <img src="resources/skygarden.jpg" alt="A huge garden in the top floor of building in London"/>
+            </a>
+          </div>
+
+          <div class="see-more">
+            <a href="#!">Read more great reasons to choose Divided ></a>
+          </div>
+
+        </div>
+      </article>
+
+      <div class="top-link">
+        <a href="#top-of-the-page" >Back to the top of the page</a>
+      </div>
+
+    </main>
+  </div> <!-- Content before the footer ends -->
+
+  <!-- The footer of the page -->
+  <footer>
+
+    <div class="content-wrapper">
+
+      <div class="linkset">
+        <h2>ABOUT DIVIDED</h2>
+
+        <ul>
+          <li>
+            <a href="#!">Our company</a>
+          </li>
+          <li>
+            <a href="#!">Careers</a>
+          </li>
+          <li>
+            <a href="#!">More about Divided</a>
+          </li>
+          <li>
+            <a href="https://www.oneworld.com/">OneWorld</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Links for travel extras -->
+      <div class="linkset travel-extras">
+        <h2>TRAVEL EXTRAS</h2>
+
+        <ul>
+          <li>
+            <a href="#!">Extras for your flight</a>
+          </li>
+          <li>
+            <a href="#!">Hotels</a>
+          </li>
+          <li>
+            <a href="#!">Car rentals</a>
+          </li>
+          <li>
+            <a href="#!">Book tours and activities</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Customer Service Links -->
+      <div class="linkset customer-service-links">
+        <h2>CUSTOMER SERVICE</h2>
+
+        <ul>
+          <li>
+            <a href="#!">Manage booking</a>
+          </li>
+          <li>
+            <a href="#!">Online help</a>
+          </li>
+          <li>
+            <a href="#!">FAQ</a>
+          </li>
+          <li>
+            <a href="#!">Contact us</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Social Media links -->
+      <div class="linkset social-links">
+        <h2>FOLLOW US</h2>
+        <ul>
+          <li>
+            <a href="#!">Facebook</a>
+          </li>
+          <li>
+            <a href="#!">Instagram</a>
+          </li>
+          <li>
+            <a href="#!">Twitter</a>
+          </li>
+          <li>
+            <a href="#!">Divided Blog</a>
+          </li>
+          <li>
+            <a href="#!">YouTube</a>
+          </li>
+          <li>
+            <a href="#!">Newsletter</a>
+          </li>
+          <li>
+            <a href="#!">Divided application</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Copyright -->
+    <div class="copyright">
+      <p>© 2017 Divided Airlines</p>
+    </div>
+
+  </footer>
+</body>
+</html>
