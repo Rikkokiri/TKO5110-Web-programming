@@ -64,11 +64,12 @@ header h1 {
 }
 
 #top-menu li {
+  display: inline-block;
   float: left;
 }
 
 #top-menu .menu-item a {
-  display: inline-block;
+  display: block;
   padding: 15px 20px 15px 20px;
   color: #fff;
   text-decoration: none;

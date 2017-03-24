@@ -1,7 +1,11 @@
 /* Styling for small devices */
 
-@media screen and (max-width: 300px){
+@media screen and (max-width: 800px){
 
-  
+  /* The top bar menu
+  =============================== */
+  #top-menu ul {
+
+  }
 
 }
