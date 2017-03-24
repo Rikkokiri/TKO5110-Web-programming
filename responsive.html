@@ -5,6 +5,8 @@
   <meta charset="utf-8" />
   <meta name="author" content="Pilvi Rajala" />
 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <!-- Task 1.
   Study how to use the media queries. Make very simple web page with only few elements and change
   their background color or size according to viewport size. Select three different sizes. With
@@ -33,6 +35,7 @@
     }
 
     h1 {
+      padding: 10px;
       margin: 3rem 0 2rem 0;
       font-size: 3rem;
       font-family: 'Permanent Marker', cursive;
@@ -54,14 +57,15 @@
     }
 
     /* 800 */
-    @media only screen and (min-width: 600px) {
+    @media screen and (min-width: 600px) {
 
       body {
         background-color: rgb(255, 221, 0);
       }
 
       .quote-wrapper {
-        width: 25%;
+        /*width: 25%;*/
+        width: 180px;
         margin: 15px 15px 15px 15px;
         padding: 25px 20px 25px 20px;
         background-color: rgb(255, 255, 255);
@@ -70,7 +74,7 @@
     }
 
     /* 500 to 799 */
-    @media only screen and (max-width: 599px) {
+    @media screen and (max-width: 599px) {
 
       h1 {
         margin: 2rem 0 1.5rem 0;
@@ -96,7 +100,7 @@
     }
 
     /* 320 */
-    @media only screen and (max-width: 320px) {
+    @media screen and (max-width: 320px) {
 
       h1 {
         margin: 1.5rem 0 1rem 0;
@@ -110,7 +114,7 @@
       }
 
       .quote-wrapper {
-        min-width: 80%;
+        min-width: 85%;
         margin: 10px 10px 10px 10px;
         padding: 15px 10px 15px 10px;
         background-color: #fff;
