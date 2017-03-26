@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DOM - Task 1</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Pilvi Rajala" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--
+  THE TASK
+  - - - - - - -
+  1. Make examples of how HTML elements can be accessed and their properties changed using methods
+  getElementsByClassName, getElementsByTagName and getElementById?
+  - - - - - -  -->
+
+  <style>
+
+    body {
+      margin: 0 auto;
+      width: 90%;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 50px;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      margin-top: 40px;
+    }
+
+    ol {
+      margin-bottom: 50px;
+    }
+
+    ol li {
+      padding: 5px 5px 5px 0px;
+    }
+
+
+    #changing-text {
+      padding: 20px;
+      border: 1px dotted #000;
+    }
+
+    #quotes-puns {
+      -moz-column-count: 2;
+      -moz-column-gap: 20px;
+      -webkit-column-count: 2;
+      -webkit-column-gap: 20px;
+      column-count: 2;
+      column-gap: 20px;
+      margin-bottom: 50px;
+    }
+
+    #quotes-puns li {
+      padding: 10px 10px 10px 10px;
+      margin: 5px;
+    }
+
+    #display-info {
+      display: none;
+      list-style: none;
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <h1>Topic 6: DOM - Task 1</h1>
+
+  <p>
+    This page is meant to demonstrate how HTML elements can be accessed and their properties changed
+    using methods getElementsByClassName, getElementsByTagName and getElementById. The list below
+    details the effects that were created to demonstrate the use of the previously mentioned the
+    methods. The actual usage of the methods can be observed my viewing the page source code.
+  </p>
+
+  <p>
+    <h2>The list of "effects"</h2>
+    <ol>
+      <li>
+        Try clicking the main heading ("Topic 6: DOM - Task 1") of the page. It will change color.
+      </li>
+      <li>
+        Click the paragraph surrounded by dotted lines. The text content of the paragraph will change.
+      </li>
+      <li>
+        Press the button to underline all h2 headings on the page. Pressing the button again removes the underlining. <br />
+        <button id="heading-button">Heading styling</button>
+      </li>
+      <li>
+        Below are listed some puns and TV show quotes. The handily tell them apart from each other, press the button below. <br />
+        <button id="quote-separator">Separate puns &amp; quotes</button> <br />
+        <span id="display-info">The puns are marked with <span style="background-color: #fff000">yellow</span> and <span style="background-color: #666fff">blue</span> marks the quotes.</span>
+      </li>
+    </ol>
+  </p>
+
+  <p>This pargraph has some issues with committing to one text:</p>
+  <p id="changing-text">
+     ...
+  </p>
+
+
+  <h2>Some quotes and puns</h2>
+
+  <ul id="quotes-puns">
+    <li class="pun">
+      What do you call an alligator in a vest? <br /> An investigator.
+    </li>
+    <li class="quote">
+      "All I wanted was to eat chicken that is smarter than other chickens and to absorb its power. And make a nice Kiev." -&nbsp;Galina "Red" Reznikov, Orange is the New Black
+    </li>
+    <li class="quote">
+       "I'm a woman, Mary. I can be as contrary as I choose." -&nbsp;Violet, Downton Abbey
+    </li>
+    <li class="pun">
+      I'd tell you a chemistry joke but I know I wouldn't get a reaction.
+    </li>
+    <li class="pun">
+      I used to go fishing with Skrillex. <br /> But he kept dropping the bass.
+    </li>
+    <li class="pun">
+      Why couldn't bicycle stand up on its own? <br /> It was two tired.
+    </li>
+    <li class="quote">
+      “Dear frozen yogurt: you are the celery of desserts. Be ice cream, or be nothing. Zero stars.” -&nbsp;Ron Swanson
+    </li>
+    <li class="pun">
+      What do you do when chemists die? <br /> Barium.
+    </li>
+    <li class="quote">
+      "Thank god I am a conspiracy theorist and not a doomsday hysteric." -&nbsp;Jack Hodngins, Bones
+    </li>
+    <li class="pun">
+      The furniture store kept calling me back. <br /> But all I wanted was one night stand.
+    </li>
+    <li class="pun">
+      Don't spell part backwards. It's a trap.
+    </li>
+    <li class="quote">
+      "You know who wears sunglasses inside? Blind people. And douchebags." -&nbsp;Dean Winchester, Supernatural
+    </li>
+    <li class="pun">
+      I'm reading a book about anti-gravity. It's impossible to put down.
+    </li>
+    <li class="quote">
+      Isobel: "How you hate to be wrong." <br />Violet: "I wouldn't know. I'm not familiar with the sensation." <br />- Downton Abbey
+    </li>
+  </ul>
+
+  <script>
+
+    var textNumber = 0;
+    var headingsUnderlined = false;
+    var allHeadings = [];
+
+    var quotes;
+    var puns;
+    var quoteDisplay = false;
+    var info;
+
+    function init(){
+
+      // Set listeners
+
+      var mainHeading = document.getElementsByTagName("h1")[0];
+
+      mainHeading.addEventListener("click", function(){
+        mainHeading.style.color = getRandomColor();
+      });
+
+      var uncommittedParagrahp = document.getElementById("changing-text");
+      uncommittedParagrahp.addEventListener("click", function(){
+        uncommittedParagrahp.innerHTML = paragraphText();
+      });
+
+      allHeadings = document.getElementsByTagName("h2");
+      document.getElementById("heading-button").addEventListener("click", underlineHeadings);
+
+      quotes = document.getElementsByClassName("quote");
+      puns = document.getElementsByClassName("pun");
+      info = document.getElementById("display-info");
+      document.getElementById("quote-separator").addEventListener("click", separatePunsAndQuotes);
+
+    }
+
+    function getRandomColor() {
+      var letters = '0123456789ABCDEF';
+      var color = '#';
+
+      for (var i = 0; i < 6; i++ ) {
+          color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    function paragraphText(){
+
+      var texts = ["First the pargraph met this text and they really hit it off.",
+                   "But then there was this text. Gorgeous. The paragraph just could not let this one go.",
+                   "This text isn't the best but the paragraph likes it and there isn't much pressure for commitment so they hang out every once in a while.",
+                   "This text definitely thinks it's the only one that paragraph hangs holds and has no idea that there so many others.",
+                   "And this text it keeps around just in case if the other texts aren't available."];
+
+      if(textNumber + 1 < texts.length){
+        textNumber += 1;
+      } else {
+        textNumber = 0;
+      }
+
+      return texts[textNumber];
+    }
+
+    /*
+     * Function underlines all the headings on the page
+     */
+    function underlineHeadings(){
+
+      if(!headingsUnderlined){
+        for(var i = 0; i < allHeadings.length; i++){
+          allHeadings[i].setAttribute("style", "text-decoration: underline;");
+        }
+        headingsUnderlined = true;
+      }
+      else {
+        for(var i = 0; i < allHeadings.length; i++){
+          allHeadings[i].setAttribute("style", "text-decoration: none;");
+        }
+        headingsUnderlined = false;
+      }
+    }
+
+    /*
+     * Change the background color of
+     */
+    function separatePunsAndQuotes(){
+
+      if(!quoteDisplay){
+        setBackgroundColor(puns, "#fff000");
+        setBackgroundColor(quotes, "#666fff");
+
+        info.style = "display: inherit";
+        quoteDisplay = true;
+        document.getElementById("quote-separator").innerHTML = "Hide separation of quotes and puns";
+      }
+      else {
+        setBackgroundColor(puns, "transparent");
+        setBackgroundColor(quotes, "transparent");
+
+        info.style = "display: none";
+        quoteDisplay = false;
+        document.getElementById("quote-separator").innerHTML = "Separate puns &amp; quotes";
+      }
+    }
+
+    function setBackgroundColor(elementList, color){
+      for(var i = 0; i < elementList.length; i++){
+        elementList[i].style.backgroundColor = color;
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", init);
+
+  </script>
+
+</body>
+</html>
