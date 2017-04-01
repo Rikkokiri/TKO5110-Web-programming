@@ -1,11 +1,259 @@
 /* Styling for small devices */
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 400px){
+
+  main {
+    width: 90vw;
+    overflow: hidden;
+  }
+
+  header {
+    margin: 0;
+    padding: 0;
+  }
+
+  header h1 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 8vw;
+    margin-bottom: 20px;
+    margin-left: 5%;
+  }
+
 
   /* The top bar menu
   =============================== */
   #top-menu ul {
-
+    margin: 0;
   }
+
+  #top-menu li {
+    display: block;
+    float: none;
+  }
+
+  #top-menu .menu-item a {
+    text-align: center;
+  }
+
+
+  /* The flight search form
+  =============================== */
+
+  #booking-form {
+    margin: 0 auto;
+  }
+
+  #booking-form fieldset {
+    padding: 10px 20px 10px 20px;
+  }
+
+  #booking-form input[type=text], input[type=date] {
+    font-size: 1rem;
+    width: 90%;
+  }
+
+  div#triptype .direction {
+    display: block;
+  }
+
+  #oneway, #roundtrip {
+    margin-left: 0px;
+  }
+
+  #booking-form select {
+    width: 90%;
+    font-size: 1rem;
+  }
+
+  /* Submit button */
+  #booking-form input[type=submit] {
+    padding: 10px 20px 10px 20px;
+    font-size: 1.1rem;
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  #booking-form .left-col, .right-col {
+    width: 100%;
+    display: block;
+    float: none;
+  }
+
+
+  /* - - - General section wrapper - - - */
+
+  .section-wrapper {
+    margin: 0 auto; /* ADDED */
+    margin-top: 60px; /* ADJUST */
+    margin-bottom: 30px; /* ADJUST */
+  }
+
+  .section-wrapper h2 {
+    margin-top: 20px;
+    padding-bottom: 0;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+
+
+  /* Flight offers
+  =============================== */
+
+  .flight-offers {
+    width: 100%;
+    display: block;
+    padding: 5px;  /* ADJUST */
+    margin: 0 auto;
+    text-align: center;
+  }
+
+
+  /* Simple promotion section
+  =============================== */
+
+  .simple-promote {
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+
+  /* Book your whole trip
+  =============================== */
+
+  .trip-service {
+    margin: 0 auto;
+    width: 90%;
+    display: block;
+  }
+
+  .trip-service h3 {
+    text-align: center;
+    font-size: 1.75rem;
+  }
+
+
+  /* Explore destinations
+  =============================== */
+
+  div.destination {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .destination img {
+    margin-bottom: 10px;
+  }
+
+
+  /* Travel guides
+  =============================== */
+
+  .travel-guide {
+    margin: 0px 15px 0px 15px;
+    padding: 25px 0px 25px 0px;
+  }
+
+  .travel-guide p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+  }
+
+  .travel-guide ul {
+    list-style: none;
+    margin-bottom: 10px;
+    padding-left: 0;
+  }
+
+  .travel-guide ul li {
+    font-size: 1.1rem;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .travel-guide .arrow {
+    font-size: 1rem;
+  }
+
+  .travel-guide .text-content {
+    display: inline-block;
+    order: 1;
+    width: 100%;
+  }
+
+  .travel-guide .image-container {
+    display: none;
+  }
+
+
+  /* Reasons to fly divided
+  =============================== */
+
+  .reason {
+    width: 100%;
+    position: relative;
+    display: block;
+  }
+
+  .reason img {
+    width: 80%;
+  }
+
+
+  /* Footer
+  =============================== */
+
+  footer .content-wrapper {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  footer .linkset {
+    margin: 0 auto;
+    display: inline-block;
+    width: 45%;
+    vertical-align: top;
+  }
+
+  footer h2 {
+    font-size: 1.1rem;
+  }
+
+  footer .linkset ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  footer .linkset ul li {
+    list-style: none;
+    padding-bottom: 5px;
+  }
+
+  footer .linkset a {
+    text-decoration: none;
+    color: white;
+  }
+
+  footer .linkset a:hover, footer .linkset a:focus {
+    text-decoration: underline;
+  }
+
+  footer .copyright {
+    display: inline-block;
+    float: left;
+    background-color: #014084;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  footer .copyright p {
+    color: white;
+    padding-left: 11.5%;
+  }
+
 
 }
