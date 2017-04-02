@@ -1,0 +1,40 @@
+    WHAT THE PAGE WILL LOOK LIKE DIFFERENT SIZES?
+- - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+Above 1000 px
+==============
+- Back to normal design?
+
+
+Above 800 px
+=============
+- Flight offers as 2 x 2 grid?
+--> Requires additional content
+- Display picture next to travel guides? (But smaller?)
+- Display reasons next to each other
+
+
+Below 800 px
+==============
+- Collapse top menu bar
+
+
+Above 600 px
+==============
+- Destinations as 2 x 2 grid?
+
+
+Above 550 px
+==============
+- Form in two columns
+
+
+400 - 550 px
+=============
+- Add a bit more whitespace on each side
+
+
+Below 400 px?
+=============
+- Everything 100%
