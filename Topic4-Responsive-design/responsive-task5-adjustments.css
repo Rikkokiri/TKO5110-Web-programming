@@ -49,7 +49,23 @@
 @media screen and (max-width: 800px){
   /* Collapse top menu bar */
 
-  /* TODO */
+  button#show-topmenu {
+    display: block;
+    background-color: #004b9b;
+    padding: 15px 20px 15px 20px;
+    color: #fff;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  #show-topmenu:hover, #show-topmenu:focus {
+    background-color: #014084;
+  }
+
+  #top-menu ul {
+    display: none;
+  }
 
 }
 
@@ -267,6 +283,55 @@
 
   .reason img {
     width: 80%;
+  }
+
+}
+
+
+/* C O L L A P S E   F O O T E R
+====================================*/
+
+@media screen and (max-width: 500px) {
+
+  footer .linkset {
+    width: 100%;
+    float: none;
+  }
+
+  footer .linkset button {
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: #fff;
+    width: 60%;
+    text-align: center;
+    display: block;
+    padding: 20px 0 5px 0;
+  }
+
+  footer .linkset ul, footer .linkset h2 {
+    display: none;
+  }
+
+  footer .linkset ul {
+    text-align: center;
+    margin-top: 0;
+    padding-top: 5px;
+  }
+
+  footer .linkset ul li {
+    font-size: 1rem;
+    list-style: none;
+    padding: 5px 0 5px 0;
+  }
+
+  footer .copyright {
+    margin-top: 25px;
+  }
+
+  footer button.list-title {
+    background-color: inherit;
+    border: none;
+    border-bottom: 2px solid #fff;
   }
 
 }

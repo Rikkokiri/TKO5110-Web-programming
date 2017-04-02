@@ -25,7 +25,6 @@ Above 800 px
 
 Below 800 px
 ==============
-TODO
 - Collapse top menu bar
 
 

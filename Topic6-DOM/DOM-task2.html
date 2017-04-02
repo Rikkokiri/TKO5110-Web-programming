@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DOM - Task 2</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Pilvi Rajala" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--
+  Task 2.
+  What is the navigator object and how it can be utilized? Write the user agent recognition code on your web page.
+  - - - - - -  -->
+
+</head>
+<body>
+
+  <h1>DOM: Task 2</h1>
+
+  <p id="userAgent"></p>
+
+  <table>
+    <tr>
+      <th>
+        Browser name
+      </th>
+      <th>
+        Version
+      </th>
+    </tr>
+    <tr>
+      <td id="browserName"></td>
+      <td id="browserVersion"></td>
+    </tr>
+
+  </table>
+
+
+  <script>
+
+    function navigatorInfo(){
+
+      document.getElementById('userAgent').innerHTML = navigator.userAgent;
+
+
+    }
+
+    function init(){
+      navigatorInfo();
+    }
+
+    // DOMContentLoaded is an event that fires when the document has finished loading
+    document.addEventListener("DOMContentLoaded", init);
+
+  </script>
+</body>
+</html>
