@@ -2,32 +2,52 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
-Above 1000 px
+Above 1200 px
 ==============
-- Back to normal design?
+- Back to normal design
+
+
+700 - 900 px
+===============
+- Footer spacing
 
 
 Above 800 px
 =============
-- Flight offers as 2 x 2 grid?
---> Requires additional content
 - Display picture next to travel guides? (But smaller?)
 - Display reasons next to each other
 
 
+950 px - 750 px
+=============
+- Make the travel guide image smaller
+
+
 Below 800 px
 ==============
+TODO
 - Collapse top menu bar
+
+
+Below 750
+=============
+- Hide the travel guide photo
+
+
+Above 700 px
+==============
+- Form in two columns
 
 
 Above 600 px
 ==============
-- Destinations as 2 x 2 grid?
+- Destinations as 2 x 2 grid
 
 
-Above 550 px
-==============
-- Form in two columns
+Below 500 px
+=============
+TODO
+- Collapse footer?
 
 
 400 - 550 px
@@ -35,6 +55,6 @@ Above 550 px
 - Add a bit more whitespace on each side
 
 
-Below 400 px?
+Below 400 px
 =============
-- Everything 100%
+- Everything in one column
