@@ -63,12 +63,18 @@ var mexico = [
 ];
 
 var southAmerica = [
-  //Argentina - Buenos Aires
-  //Bolivia - La Paz
-  //Brazil - Brasilia
-  //Chile - Santiago
-  //Colombia - Bogotá
-  //Ecuador - Quito
+  //Argentina -
+  "Buenos Aires",
+  //Bolivia -
+  "La Paz",
+  //Brazil -
+  "Brasilia",
+  //Chile -
+  "Santiago",
+  //Colombia -
+  "Bogotá", "Bogota",
+  //Ecuador -
+  "Quito"
   //Guyana - Georgetown
   //Paraguay - Asunción
   //Peru - Lima
@@ -85,7 +91,7 @@ var europe = [
   //Bulgaria
   "Sofia",
   //Croatia
-  "Zagreb", "Dubrovnik", "Pula", "Split"
+  "Zagreb", "Dubrovnik", "Pula", "Split",
   //Cyprus
   "Larnaca",
   //Czech Republic
@@ -97,7 +103,7 @@ var europe = [
   //France
   "Paris", "Nice", "Lyon", "Bordeaux", "Toulouse", "Marseille",
   //Germany
-  "Berlin", "Cologne", "Düsseldorf", "Dusseldorf", "Frankfurt", "Hamburg", "Hannover" "Munich", "Nuremberg", "Stuttgart",
+  "Berlin", "Cologne", "Düsseldorf", "Dusseldorf", "Frankfurt", "Hamburg", "Hannover", "Munich", "Nuremberg", "Stuttgart",
   //Greece
   "Athens",
   //Hungary
@@ -209,7 +215,7 @@ var africa = [
   //Egypt
   "Cairo", "Hurghada", "Marsam Alam",
   //Kenya
-  "Nairobi"
+  "Nairobi",
   //Ethiopia
   "Addis Abbada",
   //Tanzania
