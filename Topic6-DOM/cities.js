@@ -2,228 +2,516 @@
 // http://aa.fltmaps.com/en
 // https://en.wikipedia.org/wiki/American_Airlines_destinations
 
-var northAmerica = [
-  //Canada
+var citiesWithCountry = [
+  // Europe
+  ["Vienna, Austria", "Vienna"],
+  ["Brussel, Belgium", "Brussel"],
+  ["Sofia, Bulgaria", "Sofia"],
+  ["Zagreb, Croatia", "Zagreb"],
+  ["Dubrovnik, Croatia", "Dubrovnik"],
+  ["Pula, Croatia", "Pula"],
+  ["Split, Croatia", "Split"],
+  ["Larnaca, Cyprus", "Larnaca"],
+  ["Prague, Czech Republic", "Prague"],
+  ["Copenhagen, Denmark", "Copenhagen"],
+  ["Helsinki, Finland", "Helsinki"],
+  ["Paris, France", "Paris"],
+  ["Nice, France", "Nice"],
+  ["Lyon, France", "Lyon"],
+  ["Bordeaux, France", "Bordeaux"],
+  ["Toulouse, France", "Toulouse"],
+  ["Marseille, France", "Marseille"],
+  ["Berlin, Germany", "Berlin"],
+  ["Cologne, Germany", "Cologne"],
+  ["Düsseldorf, Germany", "Düsseldorf"],
+  ["Frankfurt, Germany", "Frankfurt"],
+  ["Hamburg, Germany", "Hamburg"],
+  ["Hannover, Germany", "Hannover"],
+  ["Munich, Germany", "Munich"],
+  ["Nuremberg, Germany", "Nuremberg"],
+  ["Stuttgart, Germany", "Stuttgart"],
+  ["Athens, Greece", "Athens"],
+  ["Budapest, Hungary", "Budapest"],
+  ["Reykjavik, Iceland", "Reykjavik"],
+  ["Dublin, Ireland", "Dublin"],
+  ["Rome, Italy", "Rome"],
+  ["Milan, Italy", "Milan"],
+  ["Venice, Italy", "Venice"],
+  ["Bologna, Italy", "Bologna"],
+  ["Pisa, Italy", "Pisa"],
+  ["Naples, Italy", "Naples"],
+  ["Riga, Latvia", "Riga"],
+  ["Vilnius, Lithuania", "Vilnius"],
+  ["Luxembourg, Luxembourg", "Luxembourg"],
+  ["Valletta, Malta", "Valletta"],
+  ["Amsterdam, Netherlands", "Amsterdam"],
+  ["Oslo, Norway", "Oslo, Norway",],
+  ["Tromsø, , Norway", "Tromsø"],
+  ["Tromso, , Norway", "Tromso"],
+  ["Warsaw, Poland", "Warsaw"],
+  ["Gdańsk, Poland", "Gdańsk"],
+  ["Gdansk, Poland", "Gdansk"],
+  ["Kraków, Poland", "Kraków"],
+  ["Krakow, Poland", "Krakow"],
+  ["Lisbon, Portugal", "Lisbon"],
+  ["Porto, Portugal", "Porto"],
+  ["Bucharest, Romania", "Bucharest"],
+  ["Moscow, Russia", "Moscow"],
+  ["Murmansk, Russia", "Murmansk"],
+  ["Saint Petersburg, Russia", "Saint Petersburg"],
+  ["Ljubljana, Slovenia", "Ljubljana"],
+  ["Madrid, Spain", "Madrid",],
+  ["Malaga, Spain", "Malaga",],
+  ["Granada, Spain", "Granada",],
+  ["Barcelona, Spain", "Barcelona",],
+  ["Alicante, Spain", "Alicante",],
+  ["Valencia, Spain", "Valencia",],
+  ["Asturias, Spain", "Asturias",],
+  ["Pamplona, Spain", "Pamplona",],
+  ["Lanzarote, Spain", "Lanzarote",],
+  ["Gran Canaria, Spain", "Gran Canaria",],
+  ["Fuerteventura, Spain", "Fuerteventura",],
+  ["Ibiza, Spain", "Ibiza",],
+  ["Menorca, Spain", "Menorca",],
+  ["Mallorca, Spain", "Mallorca",],
+  ["Tenerife, Spain", "Tenerife",],
+  ["Stockholm, Sweden", "Stockholm",],
+  ["Zurich, Switzerland", "Zurich",],
+  ["Geneva, Switzerland", "Geneva",],
+  ["Kiev, Ukraine", "Kiev",],
+  ["London, United Kingdom", "London",],
+  ["Manchester, United Kingdom", "Manchester",],
+  ["Edinburgh, United Kingdom", "Edinburgh",],
+  ["Glasgow, United Kingdom", "Glasgow",],
+  ["Newcastle, United Kingdom", "Newcastle",],
+  ["Belfast, United Kingdom", "Belfast",],
 
+  // Canada
+  ["Vancouver, Canada", "Vancouver"],
+  ["Toronto, Canada", "Toronto"],
+  ["Montreal, Canada", "Montreal"],
 
-  // USA by state
-  //Alabama
-  //Alaska
-  "Fairbanks", "Anchorage",
-  //Arizona
+  // United States
+  ["Birmingham, United States", "Birmingham"],
+  ["Huntsville, United States", "Huntsville"],
+  ["Montgomery, United States", "Montgomery "],
+  ["Anchorage, United States", "Anchorage"],
+  ["Phoenix, United States", "Phoenix"],
+  ["Tucson, United States", "Tucson"],
+  ["Bentonville, United States", "Bentonville"],
+  ["Little Rock, United States", "Little Rock"],
+  ["Fresno, United States", "Fresno"],
+  ["Los Angeles, United States", "Los Angeles"],
+  ["Oakland, United States", "Oakland"],
+  ["Ontario, United States", "Ontario"],
+  ["Palm Springs, United States", "Palm Springs"],
+  ["Sacramento, United States", "Sacramento"],
+  ["San Diego, United States", "San Diego"],
+  ["San Francisco, United States", "San Francisco"],
+  ["San Jose, United States", "San Jose"],
+  ["Santa Ana, United States", "Santa Ana"],
+  ["Colorado Springs, United States", "Colorado Springs"],
+  ["Denver, United States", "Denver"],
+  ["Hayden, United States", "Hayden"],
+  ["Montrose, United States", "Montrose"],
+  ["Vail, United States", "Vail"],
+  ["Hartford, United States", "Hartford"],
+  ["New Haven, United States", "New Haven"],
+  ["Fort Lauderdale, United States", "Fort Lauderdale"],
+  ["Fort Myers, United States", "Fort Myers"],
+  ["Jacksonville, United States", "Jacksonville"],
+  ["Miami, United States", "Miami"],
+  ["Orlando, United States", "Orlando"],
+  ["Tampa, United States", "Tampa"],
+  ["West Palm Beach, United States", "West Palm Beach"],
+  ["Atlanta, United States", "Atlanta"],
+  ["Honolulu, United States", "Honolulu"],
+  ["Kahului, United States", "Kahului"],
+  ["Kailua-Kona, United States", "Kailua-Kona"],
+  ["Lihue, United States", "Lihue"],
+  ["Boise, United States", "Boise"],
+  ["Chicago, United States", "Chicago"],
+  ["Indianapolis, United States", "Indianapolis"],
+  ["Des Moines, United States", "Des Moines"],
+  ["Wichita, United States", "Wichita"],
+  ["Louisville, United States", "Louisville"],
+  ["New Orleans, United States", "New Orleans"],
+  ["Portland, United States", "Portland"],
+  ["Baltimore, United States", "Baltimore"],
+  ["Boston, United States", "Boston"],
+  ["Detroit, United States", "Detroit"],
+  ["Minneapolis, United States", "Minneapolis"],
+  ["Joplin, United States", "Joplin"],
+  ["Kansas City, United States", "Kansas City"],
+  ["St. Louis, United States", "St. Louis"],
+  ["Springfield, United States", "Springfield"],
+  ["Omaha, United States", "Omaha"],
+  ["Las Vegas, United States", "Las Vegas"],
+  ["Reno, United States", "Reno"],
+  ["Newark, United States", "Newark"],
+  ["Albuquerque, United States", "Albuquerque"],
+  ["Santa Fe, United States", "Santa Fe"],
+  ["Albany, United States", "Albany"],
+  ["Buffalo, United States", "Buffalo"],
+  ["New York City, United States", "New York City"],
+  ["New York City, United States", "New York City"],
+  ["Rochester, United States", "Rochester"],
+  ["Syracuse, United States", "Syracuse"],
+  ["Charlotte, United States", "Charlotte"],
+  ["Raleigh, United States", "Raleigh"],
+  ["Cincinnati, United States", "Cincinnati"],
+  ["Cleveland, United States", "Cleveland"],
+  ["Columbus, United States", "Columbus"],
+  ["Dayton, United States", "Dayton"],
+  ["Oklahoma City, United States", "Oklahoma City"],
+  ["Tulsa, United States", "Tulsa"],
+  ["Eugene, United States", "Eugene"],
+  ["Portland, United States", "Portland"],
+  ["Harrisburg, United States", "Harrisburg"],
+  ["Philadelphia, United States", "Philadelphia"],
+  ["Pittsburgh, United States", "Pittsburgh"],
+  ["Providence, United States", "Providence"],
+  ["Memphis, United States", "Memphis"],
+  ["Nashville, United States", "Nashville"],
+  ["Austin, United States", "Austin"],
+  ["Dallas, United States", "Dallas"],
+  ["El Paso, United States", "El Paso"],
+  ["Houston, United States", "Houston"],
+  ["Houston, United States", "Houston"],
+  ["San Antonio, United States", "San Antonio"],
+  ["Salt Lake City, United States", "Salt Lake City"],
+  ["Norfolk, United States", "Norfolk"],
+  ["Richmond, United States", "Richmond"],
+  ["Seattle, United States", "Seattle"],
+  ["Washington D.C., United States", "Washington, D.C."],
+  ["Milwaukee, United States", "Milwaukee"],
+  ["Jackson, United States", "Jackson"],
 
-  //Arkansas
-  //California
-  //Colorado
-  //Connecticut
-  //Delaware
-  //Florida
-  //Georgia
-  //Hawaii
-  //Idaho
-  //Illinois Indiana
-  //Iowa
-  //Kansas
-  //Kentucky
-  //Louisiana
-  //Maine
-  //Maryland
-  //Massachusetts
-  //Michigan
-  //Minnesota
-  //Mississippi
-  //Missouri
-  //Montana Nebraska
-  //Nevada
-  //New Hampshire
-  //New Jersey
-  //New Mexico
-  //New York
-  //North Carolina
-  //North Dakota
-  //Ohio
-  //Oklahoma
-  //Oregon
-  //Pennsylvania Rhode Island
-  //South Carolina
-  //South Dakota
-  //Tennessee
-  //Texas
-  //Utah
-  //Vermont
-  //Virginia
-  //Washington
-  //West Virginia
-  //Wisconsin
-  //Wyoming
+  // Mexico
+  ["Cancun, Mexico", "Cancun"],
+  ["Puerto Vallarta, Mexico", "Puerto Vallarta"],
+  ["Mexico City, Mexico", "Mexico City"],
+  ["Zihuatanejo, Mexico", "Zihuatanejo"],
+  ["Guadalajara, Mexico", "Guadalajara, Mexico"],
+  ["Merida, Mexico", "Merida"],
+  ["Cozumel, Mexico", "Cozumel"],
+
+  // South America
+  ["Buenos Aires, Argentina", "Buenos Aires"],
+  ["La Paz, Bolivia", "La Paz"],
+  ["Santa Cruz de la Sierra, Bolivia", "Santa Cruz de la Sierra"],
+  ["Brasilia, Brazil", "Brasilia"],
+  ["Manaus, Brazil", "Manaus"],
+  ["Sao Paulo, Brazil", "Sao Paulo"],
+  ["Rio de Janeiro, Brazil", "Rio de Janeiro"],
+  ["Santiago, Chile", "Santiago"]
+  ["Bogota, Colombia", "Bogota"],
+  ["Cali, Colombia", "Cali"],
+  ["Barranquilla, Colombia", "Barranquilla"],
+  ["Quito, Ecuador", "Quito"],
+  ["Lima, Peru", "Lima"],
+  ["Caracas, Venezuela", "Caracas"],
+  ["Maracaibo, Venezuela", "Maracaibo"],
+
+  // Asia
+  ["Beijing, China", "Beijing"],
+  ["Chongqing, China", "Chongqing"],
+  ["Guangzhou, China", "Guangzhou"],
+  ["Shanghai, China", "Shanghai"],
+  ["Xi'an, China", "Xi'an"],
+  ["Nicosia, Cyprus", "Nicosia"],
+  ["Hong Kong, Hong Kong", "Hong Kong"],
+  ["Goa, India", "Goa"],
+  ["New Delhi, India", "New Delhi"],
+  ["Mumbai, India", "Mumbai"],
+  ["Jakarta, Indonesia", "Jakarta"],
+  ["Eilat, Israel", "Eilat"],
+  ["Tel Aviv, Israel", "Eilat"],
+  ["Fukuoka, Japan", "Fukuoka"],
+  ["Nagoya, Japan", "Nagoya"],
+  ["Osaka, Japan", "Osaka"],
+  ["Tokyo, Japan", "Tokyo"],
+  ["Amman, Jordan", "Amman"],
+  ["Aqaba, Jordan", "Aqaba"],
+  ["Seoul, South Korea", "Seoul"],
+  ["Kuala Lumpur, Malaysia", "Kuala Lumpur"],
+  ["Singapore, Singapore", "Singapore"],
+  ["Bangkok, Thailand", "Bangkok"],
+  ["Krabi, Thailand", "Krabi"],
+  ["Phuket, Thailand", "Phuket, Thailand"],
+  ["Antalya, Turkey", "Antalya"],
+  ["Istanbul, Turkey", "Istanbul"],
+  ["Abu Dhabi, United Arab Emirates", "Abu Dhabi"],
+  ["Dubai, United Arab Emirates", "Dubai"],
+  ["Hanoi, Vietnam", "Hanoi"],
+  ["Ho Chi Minh City, Vietnam", "Vietnam"],
+  ["Agadir, Morocco", "Agadir"],
+  ["Marrakech, Morocco", "Marrakech"],
+  ["Cairo, Egypt", "Cairo"],
+  ["Hurghada, Egypt", "Hurghada"],
+  ["Marsam Alam, Egypt", "Marsam Alam"],
+  ["Nairobi, Kenya", "Nairobi"],
+  ["Addis Abbada, Ethiopia", "Addis Abbada"],
+  ["Dar Es Salaam, Tanzania", "Dar Es Salaam"],
+  ["Cape Town, South Africa", "Cape Town"],
+  ["Johannesburg, South Africa", "Johannesburg"],
+  ["Accra, Ghana", "Accra"],
+  ["Dakar, Senegal", "Dakar"]
 ];
 
-var mexico = [
-
-];
-
-var southAmerica = [
-  //Argentina -
-  "Buenos Aires",
-  //Bolivia -
-  "La Paz",
-  //Brazil -
-  "Brasilia",
-  //Chile -
-  "Santiago",
-  //Colombia -
-  "Bogotá", "Bogota",
-  //Ecuador -
-  "Quito"
-  //Guyana - Georgetown
-  //Paraguay - Asunción
-  //Peru - Lima
-  //Suriname - Paramaribo
-  //Uruguay - Montevideo
-  //Venezuela - Caracas
-];
-
-var europe = [
-  //Austria
+var cities = [
+  // Europe
   "Vienna",
-  //Belgium
   "Brussel",
-  //Bulgaria
   "Sofia",
-  //Croatia
-  "Zagreb", "Dubrovnik", "Pula", "Split",
-  //Cyprus
+  "Zagreb",
+  "Dubrovnik",
+  "Pula",
+  "Split",
   "Larnaca",
-  //Czech Republic
   "Prague",
-  //Denmark
   "Copenhagen",
-  //Finland
   "Helsinki",
-  //France
-  "Paris", "Nice", "Lyon", "Bordeaux", "Toulouse", "Marseille",
-  //Germany
-  "Berlin", "Cologne", "Düsseldorf", "Dusseldorf", "Frankfurt", "Hamburg", "Hannover", "Munich", "Nuremberg", "Stuttgart",
-  //Greece
+  "Paris",
+  "Nice",
+  "Lyon",
+  "Bordeaux",
+  "Toulouse",
+  "Marseille",
+  "Berlin",
+  "Cologne",
+  "Düsseldorf",
+  "Frankfurt",
+  "Hamburg",
+  "Hannover",
+  "Munich",
+  "Nuremberg",
+  "Stuttgart",
   "Athens",
-  //Hungary
   "Budapest",
-  //Iceland
   "Reykjavik",
-  //Ireland
   "Dublin",
-  //Italy
-  "Rome", "Milan", "Venice", "Bologna", "Pisa", "Naples",
-  //Latvia
+  "Rome",
+  "Milan",
+  "Venice",
+  "Bologna",
+  "Pisa",
+  "Naples",
   "Riga",
-  //Lithuania
   "Vilnius",
-  //Luxembourg
   "Luxembourg",
-  //Malta
   "Valletta",
-  //Netherlands
   "Amsterdam",
-  //Norway
-  "Oslo", "Tromsø", "Tromso",
-  //Poland
-  "Warsaw", "Gdańsk", "Gdansk", "Kraków", "Krakow",
-  //Portugal
-  "Lisbon", "Porto",
-  //Romania
+  "Oslo, Norway",
+  "Tromsø",
+  "Tromso",
+  "Warsaw",
+  "Gdańsk",
+  "Gdansk",
+  "Kraków",
+  "Krakow",
+  "Lisbon",
+  "Porto",
   "Bucharest",
-  //Russia
-  "Moscow", "Murmansk", "Saint Petersburg",
-  //Slovenia
+  "Moscow",
+  "Murmansk",
+  "Saint Petersburg",
   "Ljubljana",
-  //Spain
-  "Madrid", "Malaga", "Granada", "Barcelona", "Alicante", "Valencia", "Asturias", "Pamplona",
-  "Lanzarote", "Gran Canaria", "Fuerteventura", "Ibiza", "Menorca", "Mallorca", "Tenerife",
-  //Sweden
+  "Madrid",
+  "Malaga",
+  "Granada",
+  "Barcelona",
+  "Alicante",
+  "Valencia",
+  "Asturias",
+  "Pamplona",
+  "Lanzarote",
+  "Gran Canaria",
+  "Fuerteventura",
+  "Ibiza",
+  "Menorca",
+  "Mallorca",
+  "Tenerife",
   "Stockholm",
-  //Switzerland
-  "Zurich", "Geneva",
-  //Turkey
-  "Istanbul",
-  //Ukraine
+  "Zurich",
+  "Geneva",
   "Kiev",
-  //United Kingdom
-  "London", "Manchester", "Edinburgh", "Glasgow", "Newcastle", "Belfast",
-];
+  "London",
+  "Manchester",
+  "Edinburgh",
+  "Glasgow",
+  "Newcastle",
+  "Belfast",
 
-var asia = [
-  //Afghanistan - Kabul
-  //Armenia - Yerevan
-  //Azerbaijan - Baku
-  //Bahrain - Manama
-  //Bangladesh - Dhaka
-  //Bhutan - Thimphu
-  //Brunei - Bandar Seri Begawan
-  //Cambodia - Phnom - Penh
-  //China - Beijing
-  //Cyprus - Nicosia
-  //Georgia - Tbilisi
-  //Hong - Kong
-  //India - New - Delhi
-  //Indonesia - Jakarta
-  //Iran - Tehran
-  //Iraq - Baghdad
-  //Israel - Jerusalem
-  //Japan - Tokyo
-  //Jordan - Amman
-  //Kazakhstan - Astana
-  //South - Korea - Seoul
-  //North - Korea - Pyongyang
-  //Kuwait - Kuwait - City
-  //Kyrgyzstan - Bishkek
-  //Laos - Vientiane
-  //Lebanon - Beirut
-  //Macau
-  //Malaysia - Kuala Lumpur
-  //Maldives - Malé
-  //Mongolia - Ulan - Bator
-  //Myanmar - Naypyidaw
-  //Nepal - Kathmandu
-  //Oman - Muscat
-  //Pakistan - Islamabad
-  //Palestinian National Authority - Ramallah
-  //Philippines - Manila
-  //Qatar - Doha
-  //Saudi Arabia - Riyadh
-  //Singapore - Singapore
-  //Sri Lanka - Sri Jayawardenapura Kotte
-  //Syria - Damascus
-  //Tajikistan - Dushanbe
-  //Thailand - Bangkok
-  //Timor-Leste - Dili
-  //Turkey - Ankara
-  //Turkmenistan - Ashgabat
-  //United Arab Emirates - Abu Dhabi
-  //Uzbekistan - Tashkent
-  //Vietnam - Hanoi
-  //Yemen - Sana'a
-  //Abkhazia - Sukhumi
-  //Taiwan - Taipei
-  //Nagorno-Karabakh Republic - Stepanakert
-  //Northern Cyprus - North Nicosia
-  //South Ossetia - Tskhinvali
-];
+  // Canada
+  "Vancouver",
+  "Toronto",
+  "Montreal",
 
-var africa = [
-  //Morocco
-  "Agadir", "Marrakech",
-  //Egypt
-  "Cairo", "Hurghada", "Marsam Alam",
-  //Kenya
+  // United States
+  "Birmingham",
+  "Huntsville",
+  "Montgomery ",
+  "Anchorage",
+  "Phoenix",
+  "Tucson",
+  "Bentonville",
+  "Little Rock",
+  "Fresno",
+  "Los Angeles",
+  "Oakland",
+  "Ontario",
+  "Palm Springs",
+  "Sacramento",
+  "San Diego",
+  "San Francisco",
+  "San Jose",
+  "Santa Ana",
+  "Colorado Springs",
+  "Denver",
+  "Hayden",
+  "Montrose",
+  "Vail",
+  "Hartford",
+  "New Haven",
+  "Fort Lauderdale",
+  "Fort Myers",
+  "Jacksonville",
+  "Miami",
+  "Orlando",
+  "Tampa",
+  "West Palm Beach",
+  "Atlanta",
+  "Honolulu",
+  "Kahului",
+  "Kailua-Kona",
+  "Lihue",
+  "Boise",
+  "Chicago",
+  "Indianapolis",
+  "Des Moines",
+  "Wichita",
+  "Louisville",
+  "New Orleans",
+  "Portland",
+  "Baltimore",
+  "Boston",
+  "Detroit",
+  "Minneapolis",
+  "Joplin",
+  "Kansas City",
+  "St. Louis",
+  "Springfield",
+  "Omaha",
+  "Las Vegas",
+  "Reno",
+  "Newark",
+  "Albuquerque",
+  "Santa Fe",
+  "Albany",
+  "Buffalo",
+  "New York City",
+  "New York City",
+  "Rochester",
+  "Syracuse",
+  "Charlotte",
+  "Raleigh",
+  "Cincinnati",
+  "Cleveland",
+  "Columbus",
+  "Dayton",
+  "Oklahoma City",
+  "Tulsa",
+  "Eugene",
+  "Portland",
+  "Harrisburg",
+  "Philadelphia",
+  "Pittsburgh",
+  "Providence",
+  "Memphis",
+  "Nashville",
+  "Austin",
+  "Dallas",
+  "El Paso",
+  "Houston",
+  "Houston",
+  "San Antonio",
+  "Salt Lake City",
+  "Norfolk",
+  "Richmond",
+  "Seattle",
+  "Washington D.C.",
+  "Milwaukee",
+  "Jackson",
+
+  // Mexico
+  "Cancun",
+  "Puerto Vallarta",
+  "Mexico City",
+  "Zihuatanejo",
+  "Guadalajara, Mexico",
+  "Merida",
+  "Cozumel",
+
+  // South America
+  "Buenos Aires",
+  "La Paz",
+  "Santa Cruz de la Sierra",
+  "Brasilia",
+  "Manaus",
+  "Sao Paulo",
+  "Rio de Janeiro",
+  "Santiago",
+  "Bogota",
+  "Cali",
+  "Barranquilla",
+  "Quito",
+  "Lima",
+  "Caracas",
+  "Maracaibo",
+
+  // Asia
+  "Beijing",
+  "Chongqing",
+  "Guangzhou",
+  "Shanghai",
+  "Xi'an",
+  "Nicosia",
+  "Hong Kong",
+  "Goa",
+  "New Delhi",
+  "Mumbai",
+  "Jakarta",
+  "Eilat",
+  "Eilat",
+  "Fukuoka",
+  "Nagoya",
+  "Osaka",
+  "Tokyo",
+  "Amman",
+  "Aqaba",
+  "Seoul",
+  "Kuala Lumpur",
+  "Singapore",
+  "Bangkok",
+  "Krabi",
+  "Phuket",
+  "Antalya",
+  "Istanbul",
+  "Abu Dhabi",
+  "Dubai",
+  "Hanoi",
+  "Vietnam",
+  "Agadir",
+  "Marrakech",
+  "Cairo",
+  "Hurghada",
+  "Marsam Alam",
   "Nairobi",
-  //Ethiopia
   "Addis Abbada",
-  //Tanzania
   "Dar Es Salaam",
-  //South Africa
-  "Cape Town", "Johannesburg",
-  //Ghana
+  "Cape Town",
+  "Johannesburg",
   "Accra",
-  //Senegal
   "Dakar"
 ];
