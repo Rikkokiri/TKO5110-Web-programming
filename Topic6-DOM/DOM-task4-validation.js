@@ -9,10 +9,7 @@ var yearsAvailable = 1;
 
 var fromField = document.getElementById("from-airport");
 var toField = document.getElementById("to-airport");
-var cityError = false;
 
-var fromAirport = "";
-var toAirport = "";
 
 
 function formValidationListeners(){
@@ -39,29 +36,31 @@ function formValidationListeners(){
 
   // Check that from and to cities are valid cities
   // and cities are not the same
-  // fromField.addEventListener("awesomplete-close", validateFromCity);
-  fromField.addEventListener("keyup", validateFromCity);
+  fromField.addEventListener("awesomplete-close", validateFromCity);
+  fromField.addEventListener("blur", validateFromCity);
 
-  // toField.addEventListener("awesomplete-close", validateToCity);
-  toField.addEventListener("keyup", validateToCity);
+  toField.addEventListener("awesomplete-close", validateToCity);
+  toField.addEventListener("blur", validateToCity);
 
   // -------------------- DATES --------------------
 
 
   // When departure date is selected, change the return date min-limit
-  departureDateField.addEventListener("oninput", function(){
-    console.log("Departure date changed!");
+  departureDateField.addEventListener("input", function(){
+    returnDateField.min = departureDateField.value;
+
+    var departureDate = Date.parse(departureDateField.value);
+    var returnDate = Date.parse(returnDateField.value);
+
+    // If departure date is set to be after the return date
+    // change the return date to match the departure date
+    if(!isNaN(departureDate) && !isNaN(returnDate) && (returnDate - departureDate < 0)){
+      returnDateField.value = departureDateField.value;
+    }
+
   });
 
-  // TODO
-
-  // If departure date is set to be after the return date
-  // change the return date to match the departure date
-
-  //TODO
-
-
-}
+} //formValidationListeners
 
 
 /*
@@ -83,7 +82,6 @@ function triptypeListener(){
 
 /*
  * Set initial date limits
- * TODO Documentation
  */
 function setInitialDateLimits () {
 
@@ -113,20 +111,18 @@ function cityValid(city){
 function validateFromCity(){
 
   // If entered city is not among possible destinations, display error message
-  if(!cityValid(fromField.value)){
+  if(!cityValid(fromField.value) && fromField.value != ""){
     document.getElementById("from-airport-error").innerHTML = "Invalid city";
     fromField.style.border = "1px solid #E50278";
   }
+  // If city is the same as the city customer wants to fly to, display error message
+  else if((fromField.value === toField.value) && fromField.value != ""){
+    document.getElementById("from-airport-error").innerHTML = "Same city";
+    fromField.style.border = "1px solid #E50278";
+  }
   else {
-    // If city is the same as the city customer wants to fly to, display error message
-    if(fromField.value === toField.value){
-      document.getElementById("from-airport-error").innerHTML = "Same city";
-      fromField.style.border = "1px solid #E50278";
-    }
-    else {
-      document.getElementById("from-airport-error").innerHTML = "";
-      fromField.style.border = "1px #AFAFAF solid";
-    }
+    document.getElementById("from-airport-error").innerHTML = "";
+    fromField.style.border = "1px #AFAFAF solid";
   }
 }
 
@@ -134,26 +130,21 @@ function validateFromCity(){
 function validateToCity(){
 
   // If entered city is not among possible destinations, display error message
-  if(!cityValid(toField.value)){
+  if(!cityValid(toField.value) && toField.value != ""){
     document.getElementById("to-airport-error").innerHTML = "Invalid city";
     toField.style.border = "1px solid #E50278";
   }
+  else if((toField.value === fromField.value) && toField.value != ""){
+    document.getElementById("to-airport-error").innerHTML = "Same city";
+    toField.style.border = "1px solid #E50278";
+  }
   else {
-    // If city is the same as the city customer wants to fly to, display error message
-    if(toField.value === fromField.value){
-      document.getElementById("to-airport-error").innerHTML = "Same city";
-      toField.style.border = "1px solid #E50278";
-    }
-    else {
       document.getElementById("to-airport-error").innerHTML = "";
       toField.style.border = " 1px #AFAFAF solid";
-    }
   }
 }
 
-/*
- * TODO Documentation
- */
+
 function getUpperDateLimit(mindate, addedYears){
 
   var date = new Date(Date.parse(mindate));
@@ -180,9 +171,7 @@ function getUpperDateLimit(mindate, addedYears){
   return maxDate;
 }
 
-/*
- *
- */
+
 function getLowerDateLimit(mindate){
   return getUpperDateLimit(mindate, 0);
 }

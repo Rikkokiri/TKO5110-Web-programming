@@ -12,10 +12,28 @@
   What is the navigator object and how it can be utilized? Write the user agent recognition code on your web page.
   - - - - - -  -->
 
+  <style>
+
+    body {
+      margin: 30px;
+    }
+
+    table {
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    th, td {
+      padding: 7px 30px 7px 30px;
+      border: 1px black solid;
+    }
+
+  </style>
+
 </head>
 <body>
 
-  <h1>DOM: Task 2</h1>
+  <h1>DOM - Task 2</h1>
 
   <p id="userAgent"></p>
 
@@ -38,58 +56,95 @@
 
   <script>
 
-    function navigatorInfo(){
-
-      document.getElementById('userAgent').innerHTML = navigator.userAgent;
-
-
-    }
+    var browserName = document.getElementById("browserName");
+    var browserVersion = document.getElementById("browserVersion");
 
     function browserDetection(){
 
       var agent  = navigator.userAgent;
-      var ie = false;
-      var ff = false;
       var chrome = false;
-      var opera = false;
-      var edge = false;
+      var safari = false;
 
       // Firefox
-      // if(/Firefox[\s\/](\d+\.\d+)/.test(agent)){
-      if(agent.indexOf("Firefox") != -1){
-
-        // var result = /Firefox[\s\/](\d+\.\d+)/.exec(agent);
-        var result = /Firefox[\s\/]\d+\.\d+/.exec(agent);
-        console.log("Firefox!");
-        console.log("Result: ", result);
-        // console.log(new Number(result[result.length-1]));
-        console.log("version: ", new Number(result[0]));
-
-        ff = true;
+      // Test for both Firefox x.x and Firefox/x.x
+      if(/Firefox[\s\/](\d+\.\d+)/.test(agent)){
+        var version = new Number(RegExp.$1);
+        publishResults("Firefox", version);
+        return;
       }
 
-      // Chrome
+      // Opera - version 15 or higher
+      // test for OPR/x.x
+      if(/OPR\/(\d+\.\d+)/.test(agent)){
+        var version = new Number(RegExp.$1);
+        publishResults("Opera", version);
+        return;
+      }
 
+      // Opera - older versions
+      // Test for Opera x.x or Opera/x.x
+      if(/Opera[\s\/](\d+\.\d+)/.test(agent)){
+        var version = new Number(RegExp.$1);
+        publishResults("Opera", version);
+        return;
+      }
 
-
-      // Safari
-      if(/Safari[\s\/](\d+\.\d+)/.test(agent)){
-        console.log("Safari");
+      //Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/13.10586
+      // Microsoft Edge
+      if(/Edge[\s\/](\d+\.\d+)/.test(agent)){
+        var version = new Number(RegExp.$1);
+        publishResults("Microsoft Edge", version);
+        return;
       }
 
       // Internet Explorer
+      // Test for MSIE x.x
+      if(/MSIE (\d+\.\d+)/.test(agent)){
+        var version = new Number(RegExp.$1);
+        publishResults("Internet Explorer", version);
+        return;
+      }
 
-      // Microsoft Edge
+      // Internet Explorer
+      //test for rv:x.x or rv x.x where Trident string exists
+      if(/Trident.*rv[ :]*(\d+\.\d+)/.test(agent)){
+        var version = new Number(RegExp.$1);
+        publishResults("Internet Explorer", version);
+        return;
+      }
 
-      // Opera
+      // Safari
+      if(agent.indexOf("Safari/") != -1){
+        safari = true;
+      }
 
-      console.log("No matches!");
+      if(agent.indexOf("Chrome/") != -1){
+        chrome = true;
+      }
 
+      // It's Safari, if Safari found but Chrome not
+      if(safari == true && chrome == false){
+        var version = /Version\/(\d+\.\d+)/.exec(agent);
+        publishResults("Safari", version[version.length-1]);
+        return;
+      }
+
+      // Else... Chrome
+      else if(chrome == true){
+        var version = /Chrome\/(\d+\.\d+)/.exec(agent);
+        publishResults("Chrome", version[version.length-1]);
+      }
+
+    }
+
+    function publishResults(name, version){
+      browserName.innerHTML = name;
+      browserVersion.innerHTML = version;
     }
 
     function init(){
 
-      navigatorInfo();
+      document.getElementById('userAgent').innerHTML = navigator.userAgent;
       browserDetection();
 
     }
