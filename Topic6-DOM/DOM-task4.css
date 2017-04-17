@@ -1,11 +1,11 @@
 /* DOM Exercise specific styling */
 
-
-
-
-
-
-
+#from-airport-error, #to-airport-error {
+  color: #E50278;
+  float: right;
+  margin-right: 18%;
+  /*display: none;*/
+}
 
 
 /* Styling for HTML exercise */
@@ -126,8 +126,21 @@ main {
   padding: 5px 5px 5px 5px;
   font-size: 1.25rem;
   margin-bottom: 1rem;
+  border: 1px #AFAFAF solid;
+}
+
+.awesomplete {
   width: 80%;
 }
+
+#booking-form input[type=text] {
+  width: 100%;
+}
+
+#booking-form input[type=date] {
+  width: 80%;
+}
+
 
 div#triptype {
   margin-top: 0.5rem;
@@ -607,7 +620,23 @@ footer .copyright p {
 
   #booking-form input[type=text], input[type=date] {
     font-size: 1rem;
+
+  }
+
+  .awesomplete {
     width: 90%;
+  }
+
+  #booking-form input[type=text] {
+    width: 100%;
+  }
+
+  #booking-form input[type=date] {
+    width: 90%;
+  }
+
+  #from-airport-error, #to-airport-error {
+    margin-right: 8%;
   }
 
   div#triptype .direction {
