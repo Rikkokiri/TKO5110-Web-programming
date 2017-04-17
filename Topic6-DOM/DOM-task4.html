@@ -18,8 +18,9 @@
   <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
 
 
-  <!-- Stylesheet -->
+  <!-- Stylesheets -->
   <link rel="stylesheet" type="text/css" href="DOM-task4.css" />
+  <link rel="stylesheet" href="awesomplete.css" />
 
 </head>
 <body>
@@ -69,13 +70,17 @@
 
           <!-- From -->
           <div id="depature-city" class="left-col">
-            <label for="from-airport">From</label> <br />
+            <label for="from-airport">From</label>
+            <span id="from-airport-error"></span>
+            <br />
             <input name="departure location" id="from-airport" type="text" placeholder="From" size="30" required />
           </div>
 
           <!-- To -->
           <div id="destination-city" class="right-col">
-            <label for="to-airport">To</label> <br />
+            <label for="to-airport">To</label>
+            <span id="to-airport-error"></span>
+            <br />
             <input name="destination" id="to-airport" type="text" placeholder="Where would you like to go?" size="30" required />
           </div>
 
@@ -112,7 +117,6 @@
           <div class="right-col">
             <label for="travelclass">Travel Class</label> <br />
             <select name="travelclass" id="travelclass" required>
-              <option value="">Select travel class</option>
               <option value="economy" selected>Economy</option>
               <option value="business">Business</option>
             </select>
@@ -497,90 +501,9 @@
   <script type="text/javascript" src="DOM-task4.js"></script>
   <script type="text/javascript" src="DOM-task4-validation.js"></script>
   <script type="text/javascript" src="cities.js"></script>
+  <script src="awesomplete.js"></script>
   <script>
 
-    var onewayButton;
-    var roundtripButton;
-
-    var returnDateContainer;
-    var departureDateField;
-    var returnDateField;
-
-
-    var fromField;
-    var toField;
-
-    var fromAirport;
-    var toAirport;
-
-
-    function formValidationListeners(){
-
-      //TODO
-
-      // Check that from and to cities are valid cities
-
-      fromField = document.getElementById("from-airport");
-      fromField.addEventListener("onchange", function(){}); // TODO 
-
-      toField = document.getElementById("to-airport");
-      toField.addEventListener("onchange", function(){}); // TODO
-
-
-      // Check that the cities are not the same?
-
-
-      // Check that departude date is set and is today or later
-
-
-      // If roundtrip => check that return date is set (and after departure date)
-
-
-    }
-
-    function cityValidation(field){
-
-      if(cityValid()){
-
-      }
-
-    }
-
-    /*
-     * Function which is triggered when the user selects/unselects the trip type
-     * (oneway / roundtrip)
-     */
-    function triptypeListener(){
-
-      // Oneway selected, hide return date
-      if(onewayButton.checked == true){
-        returnDateContainer.style.visibility = "hidden";
-      }
-      // Roundtrip selected, display return date selection
-      if(roundtripButton.checked == true){
-        returnDateContainer.style.visibility = "visible";
-      }
-
-    }
-
-    /*
-     * Function that sets the return date
-     */
-    function setDepartureLimits(){
-      // http://stackoverflow.com/questions/32378590/set-max-date-to-today-for-date-input
-
-      // If return date isn't set
-
-      // If return date has been set
-
-    }
-
-    /*
-     *
-     */
-    function returnDateLimits(){
-
-    }
 
     /*
      * Function that runs when the page has loaded.
@@ -590,23 +513,11 @@
       // Add listeners for responsive top menu and footer
       addResponsiveListeners();
 
-      // Set inital minimum depature date and return for today
-      departureDateField = document.getElementById("departure-date");
-      returnDateField = document.getElementById("return-date");
-
-
+      // Set inital minimum and maximum depature and return dates
+      setInitialDateLimits();
 
       // Add form validation listeners
       formValidationListeners();
-
-      // Hide return date field if oneway is selected
-      onewayButton = document.getElementById("oneway");
-      roundtripButton = document.getElementById("roundtrip");
-      returnDateContainer = document.getElementById("return-date-container");
-
-      onewayButton.addEventListener("click", triptypeListener);
-      roundtripButton.addEventListener("click", triptypeListener);
-
 
     }
 
