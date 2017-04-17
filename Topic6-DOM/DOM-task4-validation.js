@@ -39,11 +39,11 @@ function formValidationListeners(){
 
   // Check that from and to cities are valid cities
   // and cities are not the same
-  fromField.addEventListener("awesomplete-close", validaFromCity);
-  fromField.addEventListener("oninput", validaFromCity);
+  // fromField.addEventListener("awesomplete-close", validateFromCity);
+  fromField.addEventListener("keyup", validateFromCity);
 
-  toField.addEventListener("awesomplete-close", validateToCity);
-  toField.addEventListener("oninput", validateToCity);
+  // toField.addEventListener("awesomplete-close", validateToCity);
+  toField.addEventListener("keyup", validateToCity);
 
   // -------------------- DATES --------------------
 
@@ -110,7 +110,7 @@ function cityValid(city){
 }
 
 
-function validaFromCity(){
+function validateFromCity(){
 
   // If entered city is not among possible destinations, display error message
   if(!cityValid(fromField.value)){
@@ -135,10 +135,8 @@ function validateToCity(){
 
   // If entered city is not among possible destinations, display error message
   if(!cityValid(toField.value)){
-    console.log("To airport invalid!");
     document.getElementById("to-airport-error").innerHTML = "Invalid city";
     toField.style.border = "1px solid #E50278";
-    cityError = true;
   }
   else {
     // If city is the same as the city customer wants to fly to, display error message
