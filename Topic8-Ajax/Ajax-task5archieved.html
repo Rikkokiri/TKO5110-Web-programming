@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery - Task 5</title>
+
+</head>
+<body>
+
+  <h1>Quadratic Formula Calculator</h1>
+
+  <p>
+    This is a quadratic equation solver that will solve a second-order polynomial equation such as
+    ax<sup>2</sup> + bx + x = 0 for x (where a &ne; 0) using the quadratic formula.
+  </p>
+
+  <form>
+
+    <p>
+      <label> a =
+        <input type="text" name="a" id="a-param" required />
+      </label>
+    </p>
+
+    <p>
+      <label> b =
+        <input type="text" name="b" id="b-param" required />
+      </label>
+    </p>
+
+    <p>
+      <label> c =
+        <input type="text" name="c" id="c-param" required />
+      </label>
+    </p>
+
+
+    <input type="reset" value="Clear" />
+    <input type="submit" value="Solve" />
+
+  </form>
+
+  <p id="solution1"></p>
+  <p id="solution2"></p>
+
+
+  <script>
+
+    function solveEquation(){
+
+      var asyncRequest;
+      var url = "solver.php";
+
+
+
+    }
+
+
+    function init(){
+
+    }
+
+    document.addEventListener("DOMContentLoaded", init);
+
+  </script>
+</body>
+</html>

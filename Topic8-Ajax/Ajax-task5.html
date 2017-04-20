@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ajax - Task 5</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Pilvi Rajala" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--
+  THE TASK
+  - - - - - - -
+  5. Make simple Ajax application. You can for example have a PHP program, which calculates some
+  mathematical function or returns some other information based on information given by user and
+  delivered using Ajax interactions.
+  - - - - - - - -->
+
+  <style>
+
+    body {
+      margin: 30px;
+    }
+
+    input {
+      border: 0.5px solid black;
+      padding: 7px;
+    }
+
+    p#translation {
+      font-size: 1.2rem;
+      font-family: monospace;
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <h1>Text to morse code converter</h1>
+
+  <p>
+    Start typing in the box below
+  </p>
+
+  <input type="text" id="message" size = "50"/>
+
+  <p id="translation">
+  </p>
+
+
+  <script>
+
+    function convertToMorseCode(){
+
+      var asyncRequest;
+      var url = "translator.php";
+
+      var message = this.value;
+
+      if(message.length == 0) {
+        document.getElementById("translation").innerHTML = "";
+      }
+      else {
+
+        try {
+          asyncRequest = new XMLHttpRequest();
+
+          // Define what function handles the response
+          asyncRequest.onreadystatechange = displayMessage;
+
+          // Create a request
+          asyncRequest.open('POST', url);
+          asyncRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+          // Send a request to the server
+          asyncRequest.send('message=' + encodeURIComponent(message));
+        }
+
+        catch(exception) {
+          alert("Ajax request failed: " + exception);
+        }
+
+      }
+
+      //The function will be executed if request status changes to completed
+      function displayMessage() {
+        if(asyncRequest.readyState == 4 && asyncRequest.status == 200){
+          document.getElementById("translation").innerHTML = asyncRequest.responseText;
+        }
+      }
+
+    }
+
+
+    function init(){
+      document.getElementById("message").addEventListener("keyup", convertToMorseCode);
+    }
+
+    document.addEventListener("DOMContentLoaded", init);
+
+  </script>
+</body>
+</html>
