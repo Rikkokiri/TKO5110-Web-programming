@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery - Task 5</title>
+  <meta charset="utf-8" />
+  <meta name="author" content="Pilvi Rajala" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--
+  THE TASK
+  - - - - - - -
+  4. Change your Ajax solution, which you made previously, to use jQuery.
+  - - - - - - - -->
+
+  <style>
+
+    body {
+      margin: 30px;
+    }
+
+    input {
+      border: 0.5px solid black;
+      padding: 7px;
+    }
+
+    p#translation {
+      font-size: 1.2rem;
+      font-family: monospace;
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <h1>Text to morse code converter</h1>
+
+  <p>
+    Start typing in the box below
+  </p>
+
+  <input type="text" id="message" size = "50"/>
+
+  <p id="translation">
+  </p>
+
+  <!-- Include jQuery from a file -->
+  <script src="jquery-3.2.1.min.js"></script>
+  <script>
+
+    function convertToMorseCode(){
+
+      var message = this.value;
+
+      if(message.length == 0) {
+        $("#translation").text("");
+      }
+      else {
+        $.post({
+          type: "POST",
+          url: "translator.php",
+          data: { 'message': message },
+          dataType: 'text',
+          success: function(response){
+            $("#translation").text(response);
+          },
+          error: function(exception){
+            alert("Ajax request failed: " + exception);
+          }
+        });
+      }
+    }
+
+    $(document).ready(function(){
+      //Attach event listener to the input field
+      $("#message").keyup(convertToMorseCode);
+    });
+
+  </script>
+</body>
+</html>
